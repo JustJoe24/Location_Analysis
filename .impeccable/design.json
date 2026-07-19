@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-07-18T17:30:00Z",
+  "title": "Design System: NYC Food Cart Location Analysis",
+  "extensions": {
+    "colorMeta": {
+      "ink": { "role": "neutral", "displayName": "Ink", "canonical": "#1f2937", "tonalRamp": ["oklch(15% 0.02 260)", "oklch(25% 0.02 260)", "oklch(35% 0.02 260)", "oklch(45% 0.02 260)", "oklch(60% 0.02 260)", "oklch(75% 0.02 260)", "oklch(88% 0.01 260)", "oklch(95% 0.005 260)"] },
+      "slate-secondary": { "role": "neutral", "displayName": "Slate Secondary", "canonical": "#4b5563", "tonalRamp": ["oklch(15% 0.02 260)", "oklch(25% 0.02 260)", "oklch(35% 0.02 260)", "oklch(45% 0.02 260)", "oklch(60% 0.02 260)", "oklch(75% 0.02 260)", "oklch(88% 0.01 260)", "oklch(95% 0.005 260)"] },
+      "cool-canvas": { "role": "neutral", "displayName": "Cool Canvas", "canonical": "#f4f6f8", "tonalRamp": ["oklch(20% 0.01 240)", "oklch(35% 0.01 240)", "oklch(50% 0.01 240)", "oklch(65% 0.01 240)", "oklch(78% 0.008 240)", "oklch(88% 0.006 240)", "oklch(94% 0.004 240)", "oklch(97% 0.003 240)"] },
+      "paper": { "role": "neutral", "displayName": "Paper", "canonical": "#ffffff", "tonalRamp": ["oklch(20% 0 0)", "oklch(35% 0 0)", "oklch(50% 0 0)", "oklch(65% 0 0)", "oklch(78% 0 0)", "oklch(88% 0 0)", "oklch(95% 0 0)", "oklch(100% 0 0)"] },
+      "mist-panel": { "role": "neutral", "displayName": "Mist Panel", "canonical": "#f9fafb", "tonalRamp": ["oklch(20% 0.005 240)", "oklch(35% 0.005 240)", "oklch(50% 0.005 240)", "oklch(65% 0.005 240)", "oklch(78% 0.004 240)", "oklch(88% 0.003 240)", "oklch(95% 0.002 240)", "oklch(98% 0.002 240)"] },
+      "hairline": { "role": "neutral", "displayName": "Hairline", "canonical": "#e5e7eb", "tonalRamp": ["oklch(20% 0.005 260)", "oklch(35% 0.005 260)", "oklch(50% 0.005 260)", "oklch(65% 0.005 260)", "oklch(78% 0.004 260)", "oklch(85% 0.004 260)", "oklch(92% 0.003 260)", "oklch(96% 0.002 260)"] },
+      "score-high": { "role": "primary", "displayName": "Score High — Signal Green", "canonical": "#16a34a", "tonalRamp": ["oklch(20% 0.1 150)", "oklch(30% 0.13 150)", "oklch(40% 0.15 150)", "oklch(50% 0.17 150)", "oklch(60% 0.17 150)", "oklch(72% 0.14 150)", "oklch(85% 0.1 150)", "oklch(94% 0.05 150)"] },
+      "score-medium": { "role": "secondary", "displayName": "Score Medium — Amber", "canonical": "#f59e0b", "tonalRamp": ["oklch(25% 0.08 70)", "oklch(38% 0.11 70)", "oklch(50% 0.13 70)", "oklch(62% 0.15 70)", "oklch(72% 0.16 70)", "oklch(80% 0.14 70)", "oklch(89% 0.09 70)", "oklch(95% 0.05 70)"] },
+      "score-low": { "role": "secondary", "displayName": "Score Low — Alert Red", "canonical": "#dc2626", "tonalRamp": ["oklch(22% 0.11 25)", "oklch(33% 0.15 25)", "oklch(44% 0.18 25)", "oklch(55% 0.2 25)", "oklch(65% 0.17 25)", "oklch(76% 0.12 25)", "oklch(87% 0.07 25)", "oklch(95% 0.03 25)"] }
+    },
+    "typographyMeta": {
+      "headline": { "displayName": "Headline", "purpose": "The dashboard title, once per page." },
+      "title": { "displayName": "Title", "purpose": "Location-card headings and section labels." },
+      "body": { "displayName": "Body", "purpose": "Descriptions and explanatory copy." },
+      "label": { "displayName": "Label", "purpose": "Control labels and card stats; bold labels, regular values." }
+    },
+    "shadows": [],
+    "motion": [],
+    "breakpoints": []
+  },
+  "components": [
+    {
+      "name": "Location Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Ranked station card in the sidebar list: numbered title plus bold-label stats.",
+      "html": "<div class=\"ds-location-card\"><h3>1. W 21 St &amp; 6 Ave</h3><p><strong>Score:</strong> 0.982</p><p><strong>Total Trips:</strong> 48,112</p><p><strong>Lunch Trips:</strong> 4,301</p></div>",
+      "css": ".ds-location-card { padding: 12px; background: #f9fafb; border-radius: 8px; border: 1px solid #e5e7eb; font-family: Arial, sans-serif; color: #1f2937; } .ds-location-card h3 { margin: 0 0 6px 0; font-size: 15px; } .ds-location-card p { margin: 4px 0; font-size: 13px; }"
+    },
+    {
+      "name": "Control Box",
+      "kind": "input",
+      "refersTo": "panel",
+      "description": "A labeled full-width select — the sidebar's standard filter instrument.",
+      "html": "<div class=\"ds-control-box\"><label for=\"ds-view\">View Mode</label><select id=\"ds-view\"><option>Top Locations</option><option>Least Active Locations</option><option>All Locations</option></select></div>",
+      "css": ".ds-control-box { margin: 18px 0; font-family: Arial, sans-serif; color: #1f2937; } .ds-control-box label { display: block; font-weight: 700; margin-bottom: 8px; font-size: 14px; } .ds-control-box select { width: 100%; font-size: 14px; padding: 4px; } .ds-control-box select:focus-visible { outline: 2px solid #4b5563; outline-offset: 1px; }"
+    },
+    {
+      "name": "Range Control",
+      "kind": "input",
+      "refersTo": "panel",
+      "description": "Threshold slider with a live value readout (minimum lunch-hour trips).",
+      "html": "<div class=\"ds-range-box\"><label for=\"ds-range\">Minimum Lunch-Hour Trips</label><input type=\"range\" id=\"ds-range\" min=\"0\" max=\"5000\" value=\"1200\" step=\"100\" /><span>1200</span></div>",
+      "css": ".ds-range-box { margin: 18px 0; font-family: Arial, sans-serif; color: #1f2937; } .ds-range-box label { display: block; font-weight: 700; margin-bottom: 8px; font-size: 14px; } .ds-range-box input[type=range] { width: 100%; } .ds-range-box span { font-size: 13px; color: #4b5563; }"
+    },
+    {
+      "name": "Legend Panel",
+      "kind": "chip",
+      "refersTo": "panel",
+      "description": "Score-color legend: the only chrome element allowed to show data colors.",
+      "html": "<div class=\"ds-legend\"><h3>Score Color</h3><p><span class=\"ds-dot ds-high\"></span> High score</p><p><span class=\"ds-dot ds-medium\"></span> Medium score</p><p><span class=\"ds-dot ds-low\"></span> Low score</p></div>",
+      "css": ".ds-legend { margin: 24px 0; padding: 14px; background: #f9fafb; border-radius: 8px; border: 1px solid #e5e7eb; font-family: Arial, sans-serif; color: #1f2937; } .ds-legend h3 { margin-top: 0; font-size: 15px; } .ds-legend p { font-size: 14px; margin: 6px 0; } .ds-dot { display: inline-block; width: 12px; height: 12px; border-radius: 50%; margin-right: 8px; } .ds-high { background: #16a34a; } .ds-medium { background: #f59e0b; } .ds-low { background: #dc2626; }"
+    },
+    {
+      "name": "Map Marker Popup",
+      "kind": "custom",
+      "refersTo": "card",
+      "description": "Leaflet popup content: bold station name over a compact stat list.",
+      "html": "<div class=\"ds-popup\"><strong>W 21 St &amp; 6 Ave</strong><br>Food Cart Score: 0.982<br>Total Trips: 48112<br>Lunch-Hour Trips: 4301</div>",
+      "css": ".ds-popup { font-family: Arial, sans-serif; font-size: 13px; color: #1f2937; line-height: 1.5; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Field Analyst's Map",
+    "overview": "This is a working tool for spatial decisions. The map is the hero: it owns the majority of the viewport, and every other element exists to sharpen what the map shows. The sidebar is a bank of precise instruments rendered in quiet neutrals so the scored markers carry all the color. The personality is clean, analytical, trustworthy: the interface of an analyst who trusts their data and doesn't decorate it. The system explicitly rejects the generic Bootstrap dashboard: no default-widget clutter, no admin-panel chrome, no panels stacked for their own sake.",
+    "keyCharacteristics": [
+      "Map-first layout: a fixed 380px instrument sidebar, everything else is map.",
+      "Neutral gray-blue chrome; saturated color is reserved for data (score markers).",
+      "Flat surfaces separated by hairline borders and background tints, never shadows.",
+      "Refined and restrained components: minimal styling, function-first."
+    ],
+    "rules": [
+      { "name": "The Data-Owns-Color Rule", "body": "Saturated color (green, amber, red) appears only on data: markers, legend dots, and score indicators. Chrome, controls, and text stay neutral. If a button or panel is colorful, it's wrong.", "section": "colors" },
+      { "name": "The Two-Channel Rule", "body": "Score encoding may not rely on hue alone — the green/amber/red trio is a known colorblind hazard. Pair color with rank position, a label, or shape whenever scores are shown.", "section": "colors" },
+      { "name": "The One-Face Rule", "body": "One font family, everywhere. Hierarchy is weight and size only.", "section": "typography" },
+      { "name": "The No-Shadow Rule", "body": "box-shadow is prohibited. Layering is tint plus hairline, nothing else.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do keep the map dominant — the sidebar stays at 380px and never grows extra panels.",
+      "Do reserve #16a34a / #f59e0b / #dc2626 for data encoding only.",
+      "Do separate surfaces with 1px #e5e7eb hairlines and background tints (#f4f6f8 → #ffffff → #f9fafb).",
+      "Do format scores to three decimals and keep stat labels bold, values regular.",
+      "Do pair score color with rank, label, or shape (The Two-Channel Rule)."
+    ],
+    "donts": [
+      "Don't build a \"generic Bootstrap dashboard\" — no default-widget clutter, no admin-panel chrome.",
+      "Don't use box-shadow anywhere (The No-Shadow Rule).",
+      "Don't put saturated color on chrome, buttons, or headers.",
+      "Don't add controls that don't change what the map or list shows.",
+      "Don't introduce a second font family."
+    ]
+  }
+}

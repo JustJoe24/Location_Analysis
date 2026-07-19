@@ -1,0 +1,3513 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_6d8529e354783cf4c76a77110e147ad7 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_6d8529e354783cf4c76a77110e147ad7" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_6d8529e354783cf4c76a77110e147ad7 = L.map(
+                "map_6d8529e354783cf4c76a77110e147ad7",
+                {
+                    center: [40.75, -73.97],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 12,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_11f96f4f0ebf8f4aff71306af29d5126 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_11f96f4f0ebf8f4aff71306af29d5126.addTo(map_6d8529e354783cf4c76a77110e147ad7);
+        
+    
+            var marker_cluster_7956001d444458fcd58a725d04aacc50 = L.markerClusterGroup(
+                {
+}
+            );
+        
+    
+            var marker_62d04465d09c513d99a987da4b6dea7d = L.marker(
+                [40.74173969, -73.99415556],
+                {
+}
+            ).addTo(marker_cluster_7956001d444458fcd58a725d04aacc50);
+        
+    
+        var popup_26d568423bbe16675c00970432501e80 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2f1e887ebead4afdf9fbf3323f1c68a9 = $(`<div id="html_2f1e887ebead4afdf9fbf3323f1c68a9" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> W 21 St & 6 Ave<br>         <b>Food Cart Score:</b> 0.876<br>         <b>Total Trips:</b> 11153<br>         <b>Lunch Trips:</b> 2677<br>         <b>Weekday Trips:</b> 8115<br>         <b>Casual Trips:</b> 813         </div>`)[0];
+                popup_26d568423bbe16675c00970432501e80.setContent(html_2f1e887ebead4afdf9fbf3323f1c68a9);
+            
+        
+
+        marker_62d04465d09c513d99a987da4b6dea7d.bindPopup(popup_26d568423bbe16675c00970432501e80)
+        ;
+
+        
+    
+    
+            marker_62d04465d09c513d99a987da4b6dea7d.bindTooltip(
+                `<div>
+                     W 21 St & 6 Ave
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_25fa0fc5e7ad0030a8743d6d760cc87d = L.marker(
+                [40.746872, -74.00821],
+                {
+}
+            ).addTo(marker_cluster_7956001d444458fcd58a725d04aacc50);
+        
+    
+        var popup_4fe668cbbeee64e7f54819e725451a3b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_80afab2542a7146753705c5176786065 = $(`<div id="html_80afab2542a7146753705c5176786065" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> Pier 61 at Chelsea Piers<br>         <b>Food Cart Score:</b> 0.853<br>         <b>Total Trips:</b> 10982<br>         <b>Lunch Trips:</b> 2381<br>         <b>Weekday Trips:</b> 7843<br>         <b>Casual Trips:</b> 1679         </div>`)[0];
+                popup_4fe668cbbeee64e7f54819e725451a3b.setContent(html_80afab2542a7146753705c5176786065);
+            
+        
+
+        marker_25fa0fc5e7ad0030a8743d6d760cc87d.bindPopup(popup_4fe668cbbeee64e7f54819e725451a3b)
+        ;
+
+        
+    
+    
+            marker_25fa0fc5e7ad0030a8743d6d760cc87d.bindTooltip(
+                `<div>
+                     Pier 61 at Chelsea Piers
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_c3da332ef74eafb6863869e644794ead = L.marker(
+                [40.73020660529954, -73.99102628231049],
+                {
+}
+            ).addTo(marker_cluster_7956001d444458fcd58a725d04aacc50);
+        
+    
+        var popup_13dbe80a432bb5f12e5df30e3460e94d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_893e651852e657f4b583bd18b3d867b4 = $(`<div id="html_893e651852e657f4b583bd18b3d867b4" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> Lafayette St & E 8 St<br>         <b>Food Cart Score:</b> 0.722<br>         <b>Total Trips:</b> 9395<br>         <b>Lunch Trips:</b> 2053<br>         <b>Weekday Trips:</b> 6851<br>         <b>Casual Trips:</b> 884         </div>`)[0];
+                popup_13dbe80a432bb5f12e5df30e3460e94d.setContent(html_893e651852e657f4b583bd18b3d867b4);
+            
+        
+
+        marker_c3da332ef74eafb6863869e644794ead.bindPopup(popup_13dbe80a432bb5f12e5df30e3460e94d)
+        ;
+
+        
+    
+    
+            marker_c3da332ef74eafb6863869e644794ead.bindTooltip(
+                `<div>
+                     Lafayette St & E 8 St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_4dba7029dbf7f4cf8895553e363e05bc = L.marker(
+                [40.76695317, -73.98169333],
+                {
+}
+            ).addTo(marker_cluster_7956001d444458fcd58a725d04aacc50);
+        
+    
+        var popup_f263ff3da8c538bcc2e3bbe5bbd11094 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_fc9f589f5708243984493675ae2819d6 = $(`<div id="html_fc9f589f5708243984493675ae2819d6" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> Broadway & W 58 St<br>         <b>Food Cart Score:</b> 0.703<br>         <b>Total Trips:</b> 8183<br>         <b>Lunch Trips:</b> 2087<br>         <b>Weekday Trips:</b> 5493<br>         <b>Casual Trips:</b> 1737         </div>`)[0];
+                popup_f263ff3da8c538bcc2e3bbe5bbd11094.setContent(html_fc9f589f5708243984493675ae2819d6);
+            
+        
+
+        marker_4dba7029dbf7f4cf8895553e363e05bc.bindPopup(popup_f263ff3da8c538bcc2e3bbe5bbd11094)
+        ;
+
+        
+    
+    
+            marker_4dba7029dbf7f4cf8895553e363e05bc.bindTooltip(
+                `<div>
+                     Broadway & W 58 St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_c36ffb49bf8f78b7faef6de850308760 = L.marker(
+                [40.752568, -73.996765],
+                {
+}
+            ).addTo(marker_cluster_7956001d444458fcd58a725d04aacc50);
+        
+    
+        var popup_5105899f17cfb61f6e0463d55e83b8f0 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0b72f62dc5803ca63117f7f0b3dbdf66 = $(`<div id="html_0b72f62dc5803ca63117f7f0b3dbdf66" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> 9 Ave & W 33 St<br>         <b>Food Cart Score:</b> 0.693<br>         <b>Total Trips:</b> 8946<br>         <b>Lunch Trips:</b> 1817<br>         <b>Weekday Trips:</b> 7415<br>         <b>Casual Trips:</b> 912         </div>`)[0];
+                popup_5105899f17cfb61f6e0463d55e83b8f0.setContent(html_0b72f62dc5803ca63117f7f0b3dbdf66);
+            
+        
+
+        marker_c36ffb49bf8f78b7faef6de850308760.bindPopup(popup_5105899f17cfb61f6e0463d55e83b8f0)
+        ;
+
+        
+    
+    
+            marker_c36ffb49bf8f78b7faef6de850308760.bindTooltip(
+                `<div>
+                     9 Ave & W 33 St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_d9538523c4687067318b718f3e310854 = L.marker(
+                [40.737006, -73.990134],
+                {
+}
+            ).addTo(marker_cluster_7956001d444458fcd58a725d04aacc50);
+        
+    
+        var popup_d1708879866b416b5efa43541c2cd14f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8f8177738021b7a937826de761e13980 = $(`<div id="html_8f8177738021b7a937826de761e13980" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> E 17 St & Broadway<br>         <b>Food Cart Score:</b> 0.690<br>         <b>Total Trips:</b> 8351<br>         <b>Lunch Trips:</b> 2080<br>         <b>Weekday Trips:</b> 6064<br>         <b>Casual Trips:</b> 919         </div>`)[0];
+                popup_d1708879866b416b5efa43541c2cd14f.setContent(html_8f8177738021b7a937826de761e13980);
+            
+        
+
+        marker_d9538523c4687067318b718f3e310854.bindPopup(popup_d1708879866b416b5efa43541c2cd14f)
+        ;
+
+        
+    
+    
+            marker_d9538523c4687067318b718f3e310854.bindTooltip(
+                `<div>
+                     E 17 St & Broadway
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_2b40dfdc20b82ea6902790d4d72e9f49 = L.marker(
+                [40.74286877312112, -73.98918628692627],
+                {
+}
+            ).addTo(marker_cluster_7956001d444458fcd58a725d04aacc50);
+        
+    
+        var popup_1ccf4007f8990d90f040214085ae17aa = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6c88c4cb16e60385c33a5187b8926677 = $(`<div id="html_6c88c4cb16e60385c33a5187b8926677" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> Broadway & W 25 St<br>         <b>Food Cart Score:</b> 0.687<br>         <b>Total Trips:</b> 8251<br>         <b>Lunch Trips:</b> 2011<br>         <b>Weekday Trips:</b> 6311<br>         <b>Casual Trips:</b> 1000         </div>`)[0];
+                popup_1ccf4007f8990d90f040214085ae17aa.setContent(html_6c88c4cb16e60385c33a5187b8926677);
+            
+        
+
+        marker_2b40dfdc20b82ea6902790d4d72e9f49.bindPopup(popup_1ccf4007f8990d90f040214085ae17aa)
+        ;
+
+        
+    
+    
+            marker_2b40dfdc20b82ea6902790d4d72e9f49.bindTooltip(
+                `<div>
+                     Broadway & W 25 St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_e8ec6f7b4d3b9f0f1701a08c6c54e50b = L.marker(
+                [40.73454567, -73.99074142],
+                {
+}
+            ).addTo(marker_cluster_7956001d444458fcd58a725d04aacc50);
+        
+    
+        var popup_ed0bdc1895a75b73c9881ca0de6b4088 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e3833c1e77928b8c7089d0a3ffa70ffd = $(`<div id="html_e3833c1e77928b8c7089d0a3ffa70ffd" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> Broadway & E 14 St<br>         <b>Food Cart Score:</b> 0.667<br>         <b>Total Trips:</b> 8429<br>         <b>Lunch Trips:</b> 1867<br>         <b>Weekday Trips:</b> 6194<br>         <b>Casual Trips:</b> 1067         </div>`)[0];
+                popup_ed0bdc1895a75b73c9881ca0de6b4088.setContent(html_e3833c1e77928b8c7089d0a3ffa70ffd);
+            
+        
+
+        marker_e8ec6f7b4d3b9f0f1701a08c6c54e50b.bindPopup(popup_ed0bdc1895a75b73c9881ca0de6b4088)
+        ;
+
+        
+    
+    
+            marker_e8ec6f7b4d3b9f0f1701a08c6c54e50b.bindTooltip(
+                `<div>
+                     Broadway & E 14 St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_3e0062271385ef3f9029e07eff484da4 = L.marker(
+                [40.749156, -73.9916],
+                {
+}
+            ).addTo(marker_cluster_7956001d444458fcd58a725d04aacc50);
+        
+    
+        var popup_69d787af001e24897c775c4e6eaeca9c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_91e30091b19fc674e78f137d1486cdc3 = $(`<div id="html_91e30091b19fc674e78f137d1486cdc3" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> W 31 St & 7 Ave<br>         <b>Food Cart Score:</b> 0.664<br>         <b>Total Trips:</b> 8968<br>         <b>Lunch Trips:</b> 1608<br>         <b>Weekday Trips:</b> 7128<br>         <b>Casual Trips:</b> 1169         </div>`)[0];
+                popup_69d787af001e24897c775c4e6eaeca9c.setContent(html_91e30091b19fc674e78f137d1486cdc3);
+            
+        
+
+        marker_3e0062271385ef3f9029e07eff484da4.bindPopup(popup_69d787af001e24897c775c4e6eaeca9c)
+        ;
+
+        
+    
+    
+            marker_3e0062271385ef3f9029e07eff484da4.bindTooltip(
+                `<div>
+                     W 31 St & 7 Ave
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_1865e6f758649a8239f99d8f0b5bc6a6 = L.marker(
+                [40.734814, -73.992085],
+                {
+}
+            ).addTo(marker_cluster_7956001d444458fcd58a725d04aacc50);
+        
+    
+        var popup_c76d829395ebdc5a2cea725bbfede844 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c5019babf92f641db445f358169fba4f = $(`<div id="html_c5019babf92f641db445f358169fba4f" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> University Pl & E 14 St<br>         <b>Food Cart Score:</b> 0.657<br>         <b>Total Trips:</b> 8121<br>         <b>Lunch Trips:</b> 1892<br>         <b>Weekday Trips:</b> 5978<br>         <b>Casual Trips:</b> 992         </div>`)[0];
+                popup_c76d829395ebdc5a2cea725bbfede844.setContent(html_c5019babf92f641db445f358169fba4f);
+            
+        
+
+        marker_1865e6f758649a8239f99d8f0b5bc6a6.bindPopup(popup_c76d829395ebdc5a2cea725bbfede844)
+        ;
+
+        
+    
+    
+            marker_1865e6f758649a8239f99d8f0b5bc6a6.bindTooltip(
+                `<div>
+                     University Pl & E 14 St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_17dd883a092f17131b0822bc33b9d23d = L.marker(
+                [40.72966729392978, -73.98067966103554],
+                {
+}
+            ).addTo(marker_cluster_7956001d444458fcd58a725d04aacc50);
+        
+    
+        var popup_d1d77be49ff3ce49600661ea67a46f4f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_df446e5d95cbb63a2139203cc9dc6b47 = $(`<div id="html_df446e5d95cbb63a2139203cc9dc6b47" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> E 13 St & Ave A<br>         <b>Food Cart Score:</b> 0.609<br>         <b>Total Trips:</b> 8246<br>         <b>Lunch Trips:</b> 1619<br>         <b>Weekday Trips:</b> 5856<br>         <b>Casual Trips:</b> 845         </div>`)[0];
+                popup_d1d77be49ff3ce49600661ea67a46f4f.setContent(html_df446e5d95cbb63a2139203cc9dc6b47);
+            
+        
+
+        marker_17dd883a092f17131b0822bc33b9d23d.bindPopup(popup_d1d77be49ff3ce49600661ea67a46f4f)
+        ;
+
+        
+    
+    
+            marker_17dd883a092f17131b0822bc33b9d23d.bindTooltip(
+                `<div>
+                     E 13 St & Ave A
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_6735ba3411a39946c0a955522821bb3d = L.marker(
+                [40.7667405590595, -73.9790689945221],
+                {
+}
+            ).addTo(marker_cluster_7956001d444458fcd58a725d04aacc50);
+        
+    
+        var popup_5776b3c2e71cc06f0b468250a0c8ab73 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_84604a8aef1c69769a51d67e71e1c43c = $(`<div id="html_84604a8aef1c69769a51d67e71e1c43c" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> 7 Ave & Central Park South<br>         <b>Food Cart Score:</b> 0.608<br>         <b>Total Trips:</b> 6190<br>         <b>Lunch Trips:</b> 1722<br>         <b>Weekday Trips:</b> 4475<br>         <b>Casual Trips:</b> 2235         </div>`)[0];
+                popup_5776b3c2e71cc06f0b468250a0c8ab73.setContent(html_84604a8aef1c69769a51d67e71e1c43c);
+            
+        
+
+        marker_6735ba3411a39946c0a955522821bb3d.bindPopup(popup_5776b3c2e71cc06f0b468250a0c8ab73)
+        ;
+
+        
+    
+    
+            marker_6735ba3411a39946c0a955522821bb3d.bindTooltip(
+                `<div>
+                     7 Ave & Central Park South
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_d33dffbd2f29ca717f05855fae930c76 = L.marker(
+                [40.7172274, -73.98802084],
+                {
+}
+            ).addTo(marker_cluster_7956001d444458fcd58a725d04aacc50);
+        
+    
+        var popup_4ec3a7b8e750b6ea8cadb33769c6a8d4 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f1bf4c99e3d34c06e441cf8309ff4b55 = $(`<div id="html_f1bf4c99e3d34c06e441cf8309ff4b55" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> Norfolk St & Broome St<br>         <b>Food Cart Score:</b> 0.604<br>         <b>Total Trips:</b> 7964<br>         <b>Lunch Trips:</b> 1639<br>         <b>Weekday Trips:</b> 5408<br>         <b>Casual Trips:</b> 1066         </div>`)[0];
+                popup_4ec3a7b8e750b6ea8cadb33769c6a8d4.setContent(html_f1bf4c99e3d34c06e441cf8309ff4b55);
+            
+        
+
+        marker_d33dffbd2f29ca717f05855fae930c76.bindPopup(popup_4ec3a7b8e750b6ea8cadb33769c6a8d4)
+        ;
+
+        
+    
+    
+            marker_d33dffbd2f29ca717f05855fae930c76.bindTooltip(
+                `<div>
+                     Norfolk St & Broome St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_ac7bfb82f20cd60706296970b00846c6 = L.marker(
+                [40.76590936, -73.97634151],
+                {
+}
+            ).addTo(marker_cluster_7956001d444458fcd58a725d04aacc50);
+        
+    
+        var popup_c73b7095610d117d5d0c529981cd9cb5 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_3aa595c982e2d98ac98e917f37c72c3e = $(`<div id="html_3aa595c982e2d98ac98e917f37c72c3e" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> Central Park S & 6 Ave<br>         <b>Food Cart Score:</b> 0.603<br>         <b>Total Trips:</b> 5515<br>         <b>Lunch Trips:</b> 1706<br>         <b>Weekday Trips:</b> 3888<br>         <b>Casual Trips:</b> 2795         </div>`)[0];
+                popup_c73b7095610d117d5d0c529981cd9cb5.setContent(html_3aa595c982e2d98ac98e917f37c72c3e);
+            
+        
+
+        marker_ac7bfb82f20cd60706296970b00846c6.bindPopup(popup_c73b7095610d117d5d0c529981cd9cb5)
+        ;
+
+        
+    
+    
+            marker_ac7bfb82f20cd60706296970b00846c6.bindTooltip(
+                `<div>
+                     Central Park S & 6 Ave
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_41e3b317e3652a15d9d8d2971c694b00 = L.marker(
+                [40.74901271, -73.98848395],
+                {
+}
+            ).addTo(marker_cluster_7956001d444458fcd58a725d04aacc50);
+        
+    
+        var popup_8985f0d1408477cd4e5e109320099e3f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_9af932401552e104d668e743787c9e9e = $(`<div id="html_9af932401552e104d668e743787c9e9e" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> 6 Ave & W 33 St<br>         <b>Food Cart Score:</b> 0.595<br>         <b>Total Trips:</b> 8274<br>         <b>Lunch Trips:</b> 1364<br>         <b>Weekday Trips:</b> 6528<br>         <b>Casual Trips:</b> 1083         </div>`)[0];
+                popup_8985f0d1408477cd4e5e109320099e3f.setContent(html_9af932401552e104d668e743787c9e9e);
+            
+        
+
+        marker_41e3b317e3652a15d9d8d2971c694b00.bindPopup(popup_8985f0d1408477cd4e5e109320099e3f)
+        ;
+
+        
+    
+    
+            marker_41e3b317e3652a15d9d8d2971c694b00.bindTooltip(
+                `<div>
+                     6 Ave & W 33 St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_4c8b98a4532ffe1b251dbae8461d5150 = L.marker(
+                [40.722103786686034, -73.99724900722504],
+                {
+}
+            ).addTo(marker_cluster_7956001d444458fcd58a725d04aacc50);
+        
+    
+        var popup_8ba4f7fd1904495e36acba4406dedfa9 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e7fa6061ea0d850289f8c76eebb59517 = $(`<div id="html_e7fa6061ea0d850289f8c76eebb59517" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> Cleveland Pl & Spring St<br>         <b>Food Cart Score:</b> 0.589<br>         <b>Total Trips:</b> 7398<br>         <b>Lunch Trips:</b> 1653<br>         <b>Weekday Trips:</b> 5124<br>         <b>Casual Trips:</b> 1058         </div>`)[0];
+                popup_8ba4f7fd1904495e36acba4406dedfa9.setContent(html_e7fa6061ea0d850289f8c76eebb59517);
+            
+        
+
+        marker_4c8b98a4532ffe1b251dbae8461d5150.bindPopup(popup_8ba4f7fd1904495e36acba4406dedfa9)
+        ;
+
+        
+    
+    
+            marker_4c8b98a4532ffe1b251dbae8461d5150.bindTooltip(
+                `<div>
+                     Cleveland Pl & Spring St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_500210d348aa0acfac2952a1e0b854d5 = L.marker(
+                [40.74322681432173, -73.97449783980846],
+                {
+}
+            ).addTo(marker_cluster_7956001d444458fcd58a725d04aacc50);
+        
+    
+        var popup_232268a8567f6d5ff3c347fbb4eb6fcf = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_45ecd75bb1ff108e381fd6a89cb510af = $(`<div id="html_45ecd75bb1ff108e381fd6a89cb510af" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> E 33 St & 1 Ave<br>         <b>Food Cart Score:</b> 0.571<br>         <b>Total Trips:</b> 7607<br>         <b>Lunch Trips:</b> 1495<br>         <b>Weekday Trips:</b> 5801<br>         <b>Casual Trips:</b> 674         </div>`)[0];
+                popup_232268a8567f6d5ff3c347fbb4eb6fcf.setContent(html_45ecd75bb1ff108e381fd6a89cb510af);
+            
+        
+
+        marker_500210d348aa0acfac2952a1e0b854d5.bindPopup(popup_232268a8567f6d5ff3c347fbb4eb6fcf)
+        ;
+
+        
+    
+    
+            marker_500210d348aa0acfac2952a1e0b854d5.bindTooltip(
+                `<div>
+                     E 33 St & 1 Ave
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_42c48c8445405cea6178dd3f7ed7ec54 = L.marker(
+                [40.73988840858996, -73.98958593606949],
+                {
+}
+            ).addTo(marker_cluster_7956001d444458fcd58a725d04aacc50);
+        
+    
+        var popup_5073723144ea3f4561309133c98c13ad = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2cdbd9b92ace25fef7d841f3757f73f4 = $(`<div id="html_2cdbd9b92ace25fef7d841f3757f73f4" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> Broadway & E 21 St<br>         <b>Food Cart Score:</b> 0.570<br>         <b>Total Trips:</b> 7180<br>         <b>Lunch Trips:</b> 1582<br>         <b>Weekday Trips:</b> 5303<br>         <b>Casual Trips:</b> 801         </div>`)[0];
+                popup_5073723144ea3f4561309133c98c13ad.setContent(html_2cdbd9b92ace25fef7d841f3757f73f4);
+            
+        
+
+        marker_42c48c8445405cea6178dd3f7ed7ec54.bindPopup(popup_5073723144ea3f4561309133c98c13ad)
+        ;
+
+        
+    
+    
+            marker_42c48c8445405cea6178dd3f7ed7ec54.bindTooltip(
+                `<div>
+                     Broadway & E 21 St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_e4c7f9078d5723551bc178f9ea07a2e9 = L.marker(
+                [40.76030096, -73.99884222],
+                {
+}
+            ).addTo(marker_cluster_7956001d444458fcd58a725d04aacc50);
+        
+    
+        var popup_f420eb52423ed9ae02515ea737ad7d10 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_299d8cc855a9c3a792ef95bc137dcb87 = $(`<div id="html_299d8cc855a9c3a792ef95bc137dcb87" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> 11 Ave & W 41 St<br>         <b>Food Cart Score:</b> 0.569<br>         <b>Total Trips:</b> 7528<br>         <b>Lunch Trips:</b> 1531<br>         <b>Weekday Trips:</b> 5289<br>         <b>Casual Trips:</b> 838         </div>`)[0];
+                popup_f420eb52423ed9ae02515ea737ad7d10.setContent(html_299d8cc855a9c3a792ef95bc137dcb87);
+            
+        
+
+        marker_e4c7f9078d5723551bc178f9ea07a2e9.bindPopup(popup_f420eb52423ed9ae02515ea737ad7d10)
+        ;
+
+        
+    
+    
+            marker_e4c7f9078d5723551bc178f9ea07a2e9.bindTooltip(
+                `<div>
+                     11 Ave & W 41 St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_f70665289c2942abae711ea5591dab0c = L.marker(
+                [40.76009437, -73.99461843],
+                {
+}
+            ).addTo(marker_cluster_7956001d444458fcd58a725d04aacc50);
+        
+    
+        var popup_0ec8ddbb89165f067adde28fe03894ca = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_fbcb733b5b16e043cb63cd40451077b7 = $(`<div id="html_fbcb733b5b16e043cb63cd40451077b7" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> W 43 St & 10 Ave<br>         <b>Food Cart Score:</b> 0.563<br>         <b>Total Trips:</b> 7369<br>         <b>Lunch Trips:</b> 1538<br>         <b>Weekday Trips:</b> 5366<br>         <b>Casual Trips:</b> 672         </div>`)[0];
+                popup_0ec8ddbb89165f067adde28fe03894ca.setContent(html_fbcb733b5b16e043cb63cd40451077b7);
+            
+        
+
+        marker_f70665289c2942abae711ea5591dab0c.bindPopup(popup_0ec8ddbb89165f067adde28fe03894ca)
+        ;
+
+        
+    
+    
+            marker_f70665289c2942abae711ea5591dab0c.bindTooltip(
+                `<div>
+                     W 43 St & 10 Ave
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_b436372e661a73ffec857c7c173aeed6 = L.marker(
+                [40.76500525, -73.95818491],
+                {
+}
+            ).addTo(marker_cluster_7956001d444458fcd58a725d04aacc50);
+        
+    
+        var popup_3cc7d537c073f21b5acf4ddf652c4f77 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d3e99a8aa56ebe6ed6b6b6dd4b0a71bf = $(`<div id="html_d3e99a8aa56ebe6ed6b6b6dd4b0a71bf" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> 1 Ave & E 68 St<br>         <b>Food Cart Score:</b> 0.563<br>         <b>Total Trips:</b> 7461<br>         <b>Lunch Trips:</b> 1422<br>         <b>Weekday Trips:</b> 6178<br>         <b>Casual Trips:</b> 573         </div>`)[0];
+                popup_3cc7d537c073f21b5acf4ddf652c4f77.setContent(html_d3e99a8aa56ebe6ed6b6b6dd4b0a71bf);
+            
+        
+
+        marker_b436372e661a73ffec857c7c173aeed6.bindPopup(popup_3cc7d537c073f21b5acf4ddf652c4f77)
+        ;
+
+        
+    
+    
+            marker_b436372e661a73ffec857c7c173aeed6.bindTooltip(
+                `<div>
+                     1 Ave & E 68 St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_f787a5c38e037290da886e689919f8bc = L.marker(
+                [40.72456089, -73.99565293],
+                {
+}
+            ).addTo(marker_cluster_7956001d444458fcd58a725d04aacc50);
+        
+    
+        var popup_9bd288fd5c807e52b3dbb2ae39461624 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_3a214300357babbe98850a96b34bbebe = $(`<div id="html_3a214300357babbe98850a96b34bbebe" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> Lafayette St & Jersey St<br>         <b>Food Cart Score:</b> 0.562<br>         <b>Total Trips:</b> 7042<br>         <b>Lunch Trips:</b> 1579<br>         <b>Weekday Trips:</b> 4959<br>         <b>Casual Trips:</b> 902         </div>`)[0];
+                popup_9bd288fd5c807e52b3dbb2ae39461624.setContent(html_3a214300357babbe98850a96b34bbebe);
+            
+        
+
+        marker_f787a5c38e037290da886e689919f8bc.bindPopup(popup_9bd288fd5c807e52b3dbb2ae39461624)
+        ;
+
+        
+    
+    
+            marker_f787a5c38e037290da886e689919f8bc.bindTooltip(
+                `<div>
+                     Lafayette St & Jersey St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_ba750ee0ef1517ed2c2f76f2d0436c5d = L.marker(
+                [40.7390169121, -74.0026376103],
+                {
+}
+            ).addTo(marker_cluster_7956001d444458fcd58a725d04aacc50);
+        
+    
+        var popup_246cc375113622ab257e72af208a04d6 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_61461e5f3218683c37615dc4f39a0857 = $(`<div id="html_61461e5f3218683c37615dc4f39a0857" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> Greenwich Ave & 8 Ave<br>         <b>Food Cart Score:</b> 0.560<br>         <b>Total Trips:</b> 7268<br>         <b>Lunch Trips:</b> 1562<br>         <b>Weekday Trips:</b> 4980<br>         <b>Casual Trips:</b> 782         </div>`)[0];
+                popup_246cc375113622ab257e72af208a04d6.setContent(html_61461e5f3218683c37615dc4f39a0857);
+            
+        
+
+        marker_ba750ee0ef1517ed2c2f76f2d0436c5d.bindPopup(popup_246cc375113622ab257e72af208a04d6)
+        ;
+
+        
+    
+    
+            marker_ba750ee0ef1517ed2c2f76f2d0436c5d.bindTooltip(
+                `<div>
+                     Greenwich Ave & 8 Ave
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_7704ec21ae788f9ddf7cbd79332d17fb = L.marker(
+                [40.74487634, -73.99529885],
+                {
+}
+            ).addTo(marker_cluster_7956001d444458fcd58a725d04aacc50);
+        
+    
+        var popup_fcca98e8ef0ffc79e1f0ac7b79342bb6 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d31dc6bd5535e342d3585f4a9e70aca7 = $(`<div id="html_d31dc6bd5535e342d3585f4a9e70aca7" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> W 24 St & 7 Ave<br>         <b>Food Cart Score:</b> 0.551<br>         <b>Total Trips:</b> 6827<br>         <b>Lunch Trips:</b> 1565<br>         <b>Weekday Trips:</b> 5041<br>         <b>Casual Trips:</b> 676         </div>`)[0];
+                popup_fcca98e8ef0ffc79e1f0ac7b79342bb6.setContent(html_d31dc6bd5535e342d3585f4a9e70aca7);
+            
+        
+
+        marker_7704ec21ae788f9ddf7cbd79332d17fb.bindPopup(popup_fcca98e8ef0ffc79e1f0ac7b79342bb6)
+        ;
+
+        
+    
+    
+            marker_7704ec21ae788f9ddf7cbd79332d17fb.bindTooltip(
+                `<div>
+                     W 24 St & 7 Ave
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_859e3db5a2603e83aa7e926365c30be9 = L.marker(
+                [40.73038599, -74.00214988],
+                {
+}
+            ).addTo(marker_cluster_7956001d444458fcd58a725d04aacc50);
+        
+    
+        var popup_4dc22bdc4ce2352d1852d2f4f037c63f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_dff28d187d7d148cb24a396f4a4fbb2d = $(`<div id="html_dff28d187d7d148cb24a396f4a4fbb2d" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> Carmine St & 6 Ave<br>         <b>Food Cart Score:</b> 0.537<br>         <b>Total Trips:</b> 6905<br>         <b>Lunch Trips:</b> 1474<br>         <b>Weekday Trips:</b> 4548<br>         <b>Casual Trips:</b> 992         </div>`)[0];
+                popup_4dc22bdc4ce2352d1852d2f4f037c63f.setContent(html_dff28d187d7d148cb24a396f4a4fbb2d);
+            
+        
+
+        marker_859e3db5a2603e83aa7e926365c30be9.bindPopup(popup_4dc22bdc4ce2352d1852d2f4f037c63f)
+        ;
+
+        
+    
+    
+            marker_859e3db5a2603e83aa7e926365c30be9.bindTooltip(
+                `<div>
+                     Carmine St & 6 Ave
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_f0d2370cf716effc78a31af77c891fba = L.marker(
+                [40.752694, -74.002353],
+                {
+}
+            ).addTo(marker_cluster_7956001d444458fcd58a725d04aacc50);
+        
+    
+        var popup_98dea65f46d4204e6b159798b6d7425b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_9971f4051827b898e81efa5ec1343efc = $(`<div id="html_9971f4051827b898e81efa5ec1343efc" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> W 30 St & 10 Ave<br>         <b>Food Cart Score:</b> 0.531<br>         <b>Total Trips:</b> 6883<br>         <b>Lunch Trips:</b> 1358<br>         <b>Weekday Trips:</b> 5283<br>         <b>Casual Trips:</b> 853         </div>`)[0];
+                popup_98dea65f46d4204e6b159798b6d7425b.setContent(html_9971f4051827b898e81efa5ec1343efc);
+            
+        
+
+        marker_f0d2370cf716effc78a31af77c891fba.bindPopup(popup_98dea65f46d4204e6b159798b6d7425b)
+        ;
+
+        
+    
+    
+            marker_f0d2370cf716effc78a31af77c891fba.bindTooltip(
+                `<div>
+                     W 30 St & 10 Ave
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_c2c886145fa2068ee94e71899668fc52 = L.marker(
+                [40.71745169, -73.95850939],
+                {
+}
+            ).addTo(marker_cluster_7956001d444458fcd58a725d04aacc50);
+        
+    
+        var popup_d470abeda24c8b4cfb3f2abb874b41cc = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a98d278144b509126034af76a0cc43cb = $(`<div id="html_a98d278144b509126034af76a0cc43cb" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> N 6 St & Bedford Ave<br>         <b>Food Cart Score:</b> 0.527<br>         <b>Total Trips:</b> 6824<br>         <b>Lunch Trips:</b> 1453<br>         <b>Weekday Trips:</b> 4487<br>         <b>Casual Trips:</b> 908         </div>`)[0];
+                popup_d470abeda24c8b4cfb3f2abb874b41cc.setContent(html_a98d278144b509126034af76a0cc43cb);
+            
+        
+
+        marker_c2c886145fa2068ee94e71899668fc52.bindPopup(popup_d470abeda24c8b4cfb3f2abb874b41cc)
+        ;
+
+        
+    
+    
+            marker_c2c886145fa2068ee94e71899668fc52.bindTooltip(
+                `<div>
+                     N 6 St & Bedford Ave
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_af41c799708180f03dce9787293e8b45 = L.marker(
+                [40.714731, -73.966612],
+                {
+}
+            ).addTo(marker_cluster_7956001d444458fcd58a725d04aacc50);
+        
+    
+        var popup_f76bac733564a568b31400e94edac644 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a36fb35383ee01a9b7b17dd27b7b2aeb = $(`<div id="html_a36fb35383ee01a9b7b17dd27b7b2aeb" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> S 2 St & Kent Ave<br>         <b>Food Cart Score:</b> 0.522<br>         <b>Total Trips:</b> 6540<br>         <b>Lunch Trips:</b> 1431<br>         <b>Weekday Trips:</b> 4768<br>         <b>Casual Trips:</b> 801         </div>`)[0];
+                popup_f76bac733564a568b31400e94edac644.setContent(html_a36fb35383ee01a9b7b17dd27b7b2aeb);
+            
+        
+
+        marker_af41c799708180f03dce9787293e8b45.bindPopup(popup_f76bac733564a568b31400e94edac644)
+        ;
+
+        
+    
+    
+            marker_af41c799708180f03dce9787293e8b45.bindTooltip(
+                `<div>
+                     S 2 St & Kent Ave
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_042bfb3baed918eca353f5fbe5a907f5 = L.marker(
+                [40.739323, -74.008119],
+                {
+}
+            ).addTo(marker_cluster_7956001d444458fcd58a725d04aacc50);
+        
+    
+        var popup_82e5bce53a68fed2f8502df4b0f4203d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ec43b9892873842e03644e8bcacc3d3d = $(`<div id="html_ec43b9892873842e03644e8bcacc3d3d" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> Washington St & Gansevoort St<br>         <b>Food Cart Score:</b> 0.522<br>         <b>Total Trips:</b> 6401<br>         <b>Lunch Trips:</b> 1411<br>         <b>Weekday Trips:</b> 4433<br>         <b>Casual Trips:</b> 1176         </div>`)[0];
+                popup_82e5bce53a68fed2f8502df4b0f4203d.setContent(html_ec43b9892873842e03644e8bcacc3d3d);
+            
+        
+
+        marker_042bfb3baed918eca353f5fbe5a907f5.bindPopup(popup_82e5bce53a68fed2f8502df4b0f4203d)
+        ;
+
+        
+    
+    
+            marker_042bfb3baed918eca353f5fbe5a907f5.bindTooltip(
+                `<div>
+                     Washington St & Gansevoort St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_c3c38698ec6a681cd5559b78797f22be = L.marker(
+                [40.738046142482766, -73.99642959237099],
+                {
+}
+            ).addTo(marker_cluster_7956001d444458fcd58a725d04aacc50);
+        
+    
+        var popup_6fbd37528f8fd9b127b3f1ffbc8afe55 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_3c8a220f7ffd5596239470df7b87f1ae = $(`<div id="html_3c8a220f7ffd5596239470df7b87f1ae" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> W 15 St & 6 Ave<br>         <b>Food Cart Score:</b> 0.518<br>         <b>Total Trips:</b> 6400<br>         <b>Lunch Trips:</b> 1469<br>         <b>Weekday Trips:</b> 4689<br>         <b>Casual Trips:</b> 630         </div>`)[0];
+                popup_6fbd37528f8fd9b127b3f1ffbc8afe55.setContent(html_3c8a220f7ffd5596239470df7b87f1ae);
+            
+        
+
+        marker_c3c38698ec6a681cd5559b78797f22be.bindPopup(popup_6fbd37528f8fd9b127b3f1ffbc8afe55)
+        ;
+
+        
+    
+    
+            marker_c3c38698ec6a681cd5559b78797f22be.bindTooltip(
+                `<div>
+                     W 15 St & 6 Ave
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_adcee4542980e3ea4fd42d756f401b61 = L.marker(
+                [40.764555, -73.973473],
+                {
+}
+            ).addTo(marker_cluster_7956001d444458fcd58a725d04aacc50);
+        
+    
+        var popup_2ad7a43e8ce75eb341e13a4cfa44000f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0b9c849f30d3f8162197c7e9671d52b1 = $(`<div id="html_0b9c849f30d3f8162197c7e9671d52b1" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> Central Park S & Grand Army Plaza<br>         <b>Food Cart Score:</b> 0.517<br>         <b>Total Trips:</b> 4716<br>         <b>Lunch Trips:</b> 1502<br>         <b>Weekday Trips:</b> 3403<br>         <b>Casual Trips:</b> 1941         </div>`)[0];
+                popup_2ad7a43e8ce75eb341e13a4cfa44000f.setContent(html_0b9c849f30d3f8162197c7e9671d52b1);
+            
+        
+
+        marker_adcee4542980e3ea4fd42d756f401b61.bindPopup(popup_2ad7a43e8ce75eb341e13a4cfa44000f)
+        ;
+
+        
+    
+    
+            marker_adcee4542980e3ea4fd42d756f401b61.bindTooltip(
+                `<div>
+                     Central Park S & Grand Army Plaza
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_059ab3065d8fd32b456a83a2f140bdd1 = L.marker(
+                [40.7505853470215, -73.9946848154068],
+                {
+}
+            ).addTo(marker_cluster_7956001d444458fcd58a725d04aacc50);
+        
+    
+        var popup_05f19de313dbebc8670a2156943d9b28 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a17adf62e4f3ec70fb28df12def5daf2 = $(`<div id="html_a17adf62e4f3ec70fb28df12def5daf2" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> 8 Ave & W 31 St<br>         <b>Food Cart Score:</b> 0.516<br>         <b>Total Trips:</b> 7179<br>         <b>Lunch Trips:</b> 1140<br>         <b>Weekday Trips:</b> 5692<br>         <b>Casual Trips:</b> 980         </div>`)[0];
+                popup_05f19de313dbebc8670a2156943d9b28.setContent(html_a17adf62e4f3ec70fb28df12def5daf2);
+            
+        
+
+        marker_059ab3065d8fd32b456a83a2f140bdd1.bindPopup(popup_05f19de313dbebc8670a2156943d9b28)
+        ;
+
+        
+    
+    
+            marker_059ab3065d8fd32b456a83a2f140bdd1.bindTooltip(
+                `<div>
+                     8 Ave & W 31 St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_5fed1e6e1f7da1aa74bb251ac877b82f = L.marker(
+                [40.75461, -73.99177],
+                {
+}
+            ).addTo(marker_cluster_7956001d444458fcd58a725d04aacc50);
+        
+    
+        var popup_e01ccb14a0ff3684a528721de423a5e9 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_53d6bbcd4b9ce25391e499a589379f15 = $(`<div id="html_53d6bbcd4b9ce25391e499a589379f15" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> 8 Ave & W 38 St<br>         <b>Food Cart Score:</b> 0.516<br>         <b>Total Trips:</b> 6446<br>         <b>Lunch Trips:</b> 1342<br>         <b>Weekday Trips:</b> 4969<br>         <b>Casual Trips:</b> 924         </div>`)[0];
+                popup_e01ccb14a0ff3684a528721de423a5e9.setContent(html_53d6bbcd4b9ce25391e499a589379f15);
+            
+        
+
+        marker_5fed1e6e1f7da1aa74bb251ac877b82f.bindPopup(popup_e01ccb14a0ff3684a528721de423a5e9)
+        ;
+
+        
+    
+    
+            marker_5fed1e6e1f7da1aa74bb251ac877b82f.bindTooltip(
+                `<div>
+                     8 Ave & W 38 St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_abef858576df9f82bd55cc879b469119 = L.marker(
+                [40.72740794, -73.98142006],
+                {
+}
+            ).addTo(marker_cluster_7956001d444458fcd58a725d04aacc50);
+        
+    
+        var popup_79c448751a7b203a605800499c2b9d3d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6832a1c957e51b4ade019d8266c37bdb = $(`<div id="html_6832a1c957e51b4ade019d8266c37bdb" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> E 10 St & Ave A<br>         <b>Food Cart Score:</b> 0.513<br>         <b>Total Trips:</b> 6072<br>         <b>Lunch Trips:</b> 1504<br>         <b>Weekday Trips:</b> 4111<br>         <b>Casual Trips:</b> 858         </div>`)[0];
+                popup_79c448751a7b203a605800499c2b9d3d.setContent(html_6832a1c957e51b4ade019d8266c37bdb);
+            
+        
+
+        marker_abef858576df9f82bd55cc879b469119.bindPopup(popup_79c448751a7b203a605800499c2b9d3d)
+        ;
+
+        
+    
+    
+            marker_abef858576df9f82bd55cc879b469119.bindTooltip(
+                `<div>
+                     E 10 St & Ave A
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_1c0b259cf4da819c846c5dac987785af = L.marker(
+                [40.71534825, -73.96024116],
+                {
+}
+            ).addTo(marker_cluster_7956001d444458fcd58a725d04aacc50);
+        
+    
+        var popup_e075890439be8290ef43a121686959a1 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_79379a5eccec5d3f77887eeefd0e5ef7 = $(`<div id="html_79379a5eccec5d3f77887eeefd0e5ef7" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> Metropolitan Ave & Bedford Ave<br>         <b>Food Cart Score:</b> 0.510<br>         <b>Total Trips:</b> 6404<br>         <b>Lunch Trips:</b> 1425<br>         <b>Weekday Trips:</b> 4194<br>         <b>Casual Trips:</b> 938         </div>`)[0];
+                popup_e075890439be8290ef43a121686959a1.setContent(html_79379a5eccec5d3f77887eeefd0e5ef7);
+            
+        
+
+        marker_1c0b259cf4da819c846c5dac987785af.bindPopup(popup_e075890439be8290ef43a121686959a1)
+        ;
+
+        
+    
+    
+            marker_1c0b259cf4da819c846c5dac987785af.bindTooltip(
+                `<div>
+                     Metropolitan Ave & Bedford Ave
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_ba22052f94147a39a084d38b91b140b2 = L.marker(
+                [40.76171227910671, -73.98655101656914],
+                {
+}
+            ).addTo(marker_cluster_7956001d444458fcd58a725d04aacc50);
+        
+    
+        var popup_97d597176a7374ea40c8636e7228f68f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d9a01bb1029f48fcb9855dc34cee48fe = $(`<div id="html_d9a01bb1029f48fcb9855dc34cee48fe" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> 8 Ave & W 49 St<br>         <b>Food Cart Score:</b> 0.508<br>         <b>Total Trips:</b> 6709<br>         <b>Lunch Trips:</b> 1267<br>         <b>Weekday Trips:</b> 5142<br>         <b>Casual Trips:</b> 787         </div>`)[0];
+                popup_97d597176a7374ea40c8636e7228f68f.setContent(html_d9a01bb1029f48fcb9855dc34cee48fe);
+            
+        
+
+        marker_ba22052f94147a39a084d38b91b140b2.bindPopup(popup_97d597176a7374ea40c8636e7228f68f)
+        ;
+
+        
+    
+    
+            marker_ba22052f94147a39a084d38b91b140b2.bindTooltip(
+                `<div>
+                     8 Ave & W 49 St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_891cf59da440bf285f59cb4dcf82646b = L.marker(
+                [40.75640548, -73.9900262],
+                {
+}
+            ).addTo(marker_cluster_7956001d444458fcd58a725d04aacc50);
+        
+    
+        var popup_9a94ad19aa33a10c0463015eee620419 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f1fbadbf0223130d839288659c39a645 = $(`<div id="html_f1fbadbf0223130d839288659c39a645" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> W 41 St & 8 Ave<br>         <b>Food Cart Score:</b> 0.507<br>         <b>Total Trips:</b> 6839<br>         <b>Lunch Trips:</b> 1153<br>         <b>Weekday Trips:</b> 5667<br>         <b>Casual Trips:</b> 851         </div>`)[0];
+                popup_9a94ad19aa33a10c0463015eee620419.setContent(html_f1fbadbf0223130d839288659c39a645);
+            
+        
+
+        marker_891cf59da440bf285f59cb4dcf82646b.bindPopup(popup_9a94ad19aa33a10c0463015eee620419)
+        ;
+
+        
+    
+    
+            marker_891cf59da440bf285f59cb4dcf82646b.bindTooltip(
+                `<div>
+                     W 41 St & 8 Ave
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_db27c48764a56c70987272bc1a1a1fe7 = L.marker(
+                [40.751873, -73.977706],
+                {
+}
+            ).addTo(marker_cluster_7956001d444458fcd58a725d04aacc50);
+        
+    
+        var popup_465a08d1d997f5443485957d8fb6b161 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8db2cfdbe83fc84102b23566699b5c56 = $(`<div id="html_8db2cfdbe83fc84102b23566699b5c56" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> Park Ave & E 42 St<br>         <b>Food Cart Score:</b> 0.506<br>         <b>Total Trips:</b> 7411<br>         <b>Lunch Trips:</b> 941<br>         <b>Weekday Trips:</b> 6362<br>         <b>Casual Trips:</b> 981         </div>`)[0];
+                popup_465a08d1d997f5443485957d8fb6b161.setContent(html_8db2cfdbe83fc84102b23566699b5c56);
+            
+        
+
+        marker_db27c48764a56c70987272bc1a1a1fe7.bindPopup(popup_465a08d1d997f5443485957d8fb6b161)
+        ;
+
+        
+    
+    
+            marker_db27c48764a56c70987272bc1a1a1fe7.bindTooltip(
+                `<div>
+                     Park Ave & E 42 St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_541bd8d19b5ad583102af36f9ee53178 = L.marker(
+                [40.7462009, -73.98855723],
+                {
+}
+            ).addTo(marker_cluster_7956001d444458fcd58a725d04aacc50);
+        
+    
+        var popup_8212fd2cfb647675618d677b8b940508 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_83962d2d89096e3cf4b2ebb17d2c98d8 = $(`<div id="html_83962d2d89096e3cf4b2ebb17d2c98d8" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> Broadway & W 29 St<br>         <b>Food Cart Score:</b> 0.502<br>         <b>Total Trips:</b> 6506<br>         <b>Lunch Trips:</b> 1260<br>         <b>Weekday Trips:</b> 5075<br>         <b>Casual Trips:</b> 804         </div>`)[0];
+                popup_8212fd2cfb647675618d677b8b940508.setContent(html_83962d2d89096e3cf4b2ebb17d2c98d8);
+            
+        
+
+        marker_541bd8d19b5ad583102af36f9ee53178.bindPopup(popup_8212fd2cfb647675618d677b8b940508)
+        ;
+
+        
+    
+    
+            marker_541bd8d19b5ad583102af36f9ee53178.bindTooltip(
+                `<div>
+                     Broadway & W 29 St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_bd746e16d14a4aa352b3ae6cb580d4f6 = L.marker(
+                [40.76087502, -74.00277668],
+                {
+}
+            ).addTo(marker_cluster_7956001d444458fcd58a725d04aacc50);
+        
+    
+        var popup_2b755eba493e9acc07e29e7ce6e602ac = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e8710854712688dbd1edad38e4cde05c = $(`<div id="html_e8710854712688dbd1edad38e4cde05c" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> 12 Ave & W 40 St<br>         <b>Food Cart Score:</b> 0.501<br>         <b>Total Trips:</b> 6018<br>         <b>Lunch Trips:</b> 1236<br>         <b>Weekday Trips:</b> 4409<br>         <b>Casual Trips:</b> 1562         </div>`)[0];
+                popup_2b755eba493e9acc07e29e7ce6e602ac.setContent(html_e8710854712688dbd1edad38e4cde05c);
+            
+        
+
+        marker_bd746e16d14a4aa352b3ae6cb580d4f6.bindPopup(popup_2b755eba493e9acc07e29e7ce6e602ac)
+        ;
+
+        
+    
+    
+            marker_bd746e16d14a4aa352b3ae6cb580d4f6.bindTooltip(
+                `<div>
+                     12 Ave & W 40 St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_fb13ec1ca071e730f96a4cbc58e083de = L.marker(
+                [40.740983, -74.001702],
+                {
+}
+            ).addTo(marker_cluster_7956001d444458fcd58a725d04aacc50);
+        
+    
+        var popup_c0eca80619934944087ff03fe56e2e2d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_602827d0ec4d5b89b65766dfe7f23555 = $(`<div id="html_602827d0ec4d5b89b65766dfe7f23555" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> 8 Ave & W 16 St<br>         <b>Food Cart Score:</b> 0.499<br>         <b>Total Trips:</b> 6341<br>         <b>Lunch Trips:</b> 1352<br>         <b>Weekday Trips:</b> 4930<br>         <b>Casual Trips:</b> 483         </div>`)[0];
+                popup_c0eca80619934944087ff03fe56e2e2d.setContent(html_602827d0ec4d5b89b65766dfe7f23555);
+            
+        
+
+        marker_fb13ec1ca071e730f96a4cbc58e083de.bindPopup(popup_c0eca80619934944087ff03fe56e2e2d)
+        ;
+
+        
+    
+    
+            marker_fb13ec1ca071e730f96a4cbc58e083de.bindTooltip(
+                `<div>
+                     8 Ave & W 16 St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_ebbff05a26480b4286f9d78a64fecb6b = L.marker(
+                [40.718822, -73.99596],
+                {
+}
+            ).addTo(marker_cluster_7956001d444458fcd58a725d04aacc50);
+        
+    
+        var popup_ffac1654891f29037a8d6f9e6c7bad1e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c8025f05cfff3e62c18b298a22971215 = $(`<div id="html_c8025f05cfff3e62c18b298a22971215" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> Grand St & Elizabeth St<br>         <b>Food Cart Score:</b> 0.498<br>         <b>Total Trips:</b> 5999<br>         <b>Lunch Trips:</b> 1466<br>         <b>Weekday Trips:</b> 4171<br>         <b>Casual Trips:</b> 603         </div>`)[0];
+                popup_ffac1654891f29037a8d6f9e6c7bad1e.setContent(html_c8025f05cfff3e62c18b298a22971215);
+            
+        
+
+        marker_ebbff05a26480b4286f9d78a64fecb6b.bindPopup(popup_ffac1654891f29037a8d6f9e6c7bad1e)
+        ;
+
+        
+    
+    
+            marker_ebbff05a26480b4286f9d78a64fecb6b.bindTooltip(
+                `<div>
+                     Grand St & Elizabeth St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_3968e20093e62512459e4220f298c6d2 = L.marker(
+                [40.71427487, -73.98990025],
+                {
+}
+            ).addTo(marker_cluster_7956001d444458fcd58a725d04aacc50);
+        
+    
+        var popup_338a7e51cb34bedd7e7bc3e1aa5dac5a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ac18ad29d5f4303d65b4fe600eb4b881 = $(`<div id="html_ac18ad29d5f4303d65b4fe600eb4b881" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> Canal St & Rutgers St<br>         <b>Food Cart Score:</b> 0.493<br>         <b>Total Trips:</b> 6162<br>         <b>Lunch Trips:</b> 1376<br>         <b>Weekday Trips:</b> 4108<br>         <b>Casual Trips:</b> 839         </div>`)[0];
+                popup_338a7e51cb34bedd7e7bc3e1aa5dac5a.setContent(html_ac18ad29d5f4303d65b4fe600eb4b881);
+            
+        
+
+        marker_3968e20093e62512459e4220f298c6d2.bindPopup(popup_338a7e51cb34bedd7e7bc3e1aa5dac5a)
+        ;
+
+        
+    
+    
+            marker_3968e20093e62512459e4220f298c6d2.bindTooltip(
+                `<div>
+                     Canal St & Rutgers St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_90fc035fb803836cd69e2555135e68c7 = L.marker(
+                [40.71797940978296, -73.96427449047715],
+                {
+}
+            ).addTo(marker_cluster_7956001d444458fcd58a725d04aacc50);
+        
+    
+        var popup_e8a38195e9234e95785df5325587f60b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_27392b5922cb164d1c519da66d8fc570 = $(`<div id="html_27392b5922cb164d1c519da66d8fc570" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> Kent Ave & N 3 St<br>         <b>Food Cart Score:</b> 0.490<br>         <b>Total Trips:</b> 5738<br>         <b>Lunch Trips:</b> 1494<br>         <b>Weekday Trips:</b> 3640<br>         <b>Casual Trips:</b> 727         </div>`)[0];
+                popup_e8a38195e9234e95785df5325587f60b.setContent(html_27392b5922cb164d1c519da66d8fc570);
+            
+        
+
+        marker_90fc035fb803836cd69e2555135e68c7.bindPopup(popup_e8a38195e9234e95785df5325587f60b)
+        ;
+
+        
+    
+    
+            marker_90fc035fb803836cd69e2555135e68c7.bindTooltip(
+                `<div>
+                     Kent Ave & N 3 St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_42e89c596d362e5cfa932c102d888a1f = L.marker(
+                [40.72335597960796, -73.98864984512329],
+                {
+}
+            ).addTo(marker_cluster_7956001d444458fcd58a725d04aacc50);
+        
+    
+        var popup_5d48b5b932c678e6c37c50dfe2a6ca75 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_63d2dbb5db41e03170272c955e0028ee = $(`<div id="html_63d2dbb5db41e03170272c955e0028ee" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> E 1 St & 1 Ave<br>         <b>Food Cart Score:</b> 0.490<br>         <b>Total Trips:</b> 6336<br>         <b>Lunch Trips:</b> 1324<br>         <b>Weekday Trips:</b> 4179<br>         <b>Casual Trips:</b> 863         </div>`)[0];
+                popup_5d48b5b932c678e6c37c50dfe2a6ca75.setContent(html_63d2dbb5db41e03170272c955e0028ee);
+            
+        
+
+        marker_42e89c596d362e5cfa932c102d888a1f.bindPopup(popup_5d48b5b932c678e6c37c50dfe2a6ca75)
+        ;
+
+        
+    
+    
+            marker_42e89c596d362e5cfa932c102d888a1f.bindTooltip(
+                `<div>
+                     E 1 St & 1 Ave
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_9865c559db7b0bca42deac62fcd54219 = L.marker(
+                [40.7770575, -73.97898475],
+                {
+}
+            ).addTo(marker_cluster_7956001d444458fcd58a725d04aacc50);
+        
+    
+        var popup_09903ca422d5c6e1769f78fad9f7bfd8 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f5c63cefe720504c10f5316af5cce231 = $(`<div id="html_f5c63cefe720504c10f5316af5cce231" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> Columbus Ave & W 72 St<br>         <b>Food Cart Score:</b> 0.489<br>         <b>Total Trips:</b> 6051<br>         <b>Lunch Trips:</b> 1381<br>         <b>Weekday Trips:</b> 4197<br>         <b>Casual Trips:</b> 701         </div>`)[0];
+                popup_09903ca422d5c6e1769f78fad9f7bfd8.setContent(html_f5c63cefe720504c10f5316af5cce231);
+            
+        
+
+        marker_9865c559db7b0bca42deac62fcd54219.bindPopup(popup_09903ca422d5c6e1769f78fad9f7bfd8)
+        ;
+
+        
+    
+    
+            marker_9865c559db7b0bca42deac62fcd54219.bindTooltip(
+                `<div>
+                     Columbus Ave & W 72 St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_6d6759ead8ac5f4c80c009cf9fa9c288 = L.marker(
+                [40.68506807308177, -73.97790759801863],
+                {
+}
+            ).addTo(marker_cluster_7956001d444458fcd58a725d04aacc50);
+        
+    
+        var popup_eb0d3fd063b9cf1ec7f9e683cb21be23 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d065faaa3754500621591729e918d48d = $(`<div id="html_d065faaa3754500621591729e918d48d" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> Hanson Pl & Ashland Pl<br>         <b>Food Cart Score:</b> 0.487<br>         <b>Total Trips:</b> 6064<br>         <b>Lunch Trips:</b> 1284<br>         <b>Weekday Trips:</b> 4367<br>         <b>Casual Trips:</b> 952         </div>`)[0];
+                popup_eb0d3fd063b9cf1ec7f9e683cb21be23.setContent(html_d065faaa3754500621591729e918d48d);
+            
+        
+
+        marker_6d6759ead8ac5f4c80c009cf9fa9c288.bindPopup(popup_eb0d3fd063b9cf1ec7f9e683cb21be23)
+        ;
+
+        
+    
+    
+            marker_6d6759ead8ac5f4c80c009cf9fa9c288.bindTooltip(
+                `<div>
+                     Hanson Pl & Ashland Pl
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_8454f98784b6d2abcfcddb071d8fb665 = L.marker(
+                [40.7612274, -73.96094022],
+                {
+}
+            ).addTo(marker_cluster_7956001d444458fcd58a725d04aacc50);
+        
+    
+        var popup_8b32250829aa3a270db2b60e871a0b16 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c13fb9d9c5540a4fc4a7231589c46381 = $(`<div id="html_c13fb9d9c5540a4fc4a7231589c46381" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> 1 Ave & E 62 St<br>         <b>Food Cart Score:</b> 0.481<br>         <b>Total Trips:</b> 6078<br>         <b>Lunch Trips:</b> 1333<br>         <b>Weekday Trips:</b> 4326<br>         <b>Casual Trips:</b> 588         </div>`)[0];
+                popup_8b32250829aa3a270db2b60e871a0b16.setContent(html_c13fb9d9c5540a4fc4a7231589c46381);
+            
+        
+
+        marker_8454f98784b6d2abcfcddb071d8fb665.bindPopup(popup_8b32250829aa3a270db2b60e871a0b16)
+        ;
+
+        
+    
+    
+            marker_8454f98784b6d2abcfcddb071d8fb665.bindTooltip(
+                `<div>
+                     1 Ave & E 62 St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_30b5390fa9bb309c8ab091d8568284bb = L.marker(
+                [40.77282817, -73.96685276],
+                {
+}
+            ).addTo(marker_cluster_7956001d444458fcd58a725d04aacc50);
+        
+    
+        var popup_887fbc506fb976706fa7f9ce869168e4 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2231fc5793f02f06cb304fee9c907f23 = $(`<div id="html_2231fc5793f02f06cb304fee9c907f23" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> 5 Ave & E 72 St<br>         <b>Food Cart Score:</b> 0.480<br>         <b>Total Trips:</b> 4661<br>         <b>Lunch Trips:</b> 1374<br>         <b>Weekday Trips:</b> 3208<br>         <b>Casual Trips:</b> 1652         </div>`)[0];
+                popup_887fbc506fb976706fa7f9ce869168e4.setContent(html_2231fc5793f02f06cb304fee9c907f23);
+            
+        
+
+        marker_30b5390fa9bb309c8ab091d8568284bb.bindPopup(popup_887fbc506fb976706fa7f9ce869168e4)
+        ;
+
+        
+    
+    
+            marker_30b5390fa9bb309c8ab091d8568284bb.bindTooltip(
+                `<div>
+                     5 Ave & E 72 St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_61189667e30fa95be8d62c9d173ed877 = L.marker(
+                [40.73401143, -74.00293877],
+                {
+}
+            ).addTo(marker_cluster_7956001d444458fcd58a725d04aacc50);
+        
+    
+        var popup_f916852e69d6ba7b017c94b7d7e7f6aa = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_549f904b40d07cd6491c219c9899302f = $(`<div id="html_549f904b40d07cd6491c219c9899302f" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> W 4 St & 7 Ave S<br>         <b>Food Cart Score:</b> 0.477<br>         <b>Total Trips:</b> 6193<br>         <b>Lunch Trips:</b> 1275<br>         <b>Weekday Trips:</b> 4041<br>         <b>Casual Trips:</b> 891         </div>`)[0];
+                popup_f916852e69d6ba7b017c94b7d7e7f6aa.setContent(html_549f904b40d07cd6491c219c9899302f);
+            
+        
+
+        marker_61189667e30fa95be8d62c9d173ed877.bindPopup(popup_f916852e69d6ba7b017c94b7d7e7f6aa)
+        ;
+
+        
+    
+    
+            marker_61189667e30fa95be8d62c9d173ed877.bindTooltip(
+                `<div>
+                     W 4 St & 7 Ave S
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_b604a1734a68b5bbe06f8e1928fade1b = L.marker(
+                [40.73139303364151, -73.98286700248718],
+                {
+}
+            ).addTo(marker_cluster_7956001d444458fcd58a725d04aacc50);
+        
+    
+        var popup_85d002ff95ebb63b7a6c874a64c8301f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6bd29686e8baf2e7ca00a02607d0d28b = $(`<div id="html_6bd29686e8baf2e7ca00a02607d0d28b" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> E 14 St & 1 Ave<br>         <b>Food Cart Score:</b> 0.465<br>         <b>Total Trips:</b> 5829<br>         <b>Lunch Trips:</b> 1296<br>         <b>Weekday Trips:</b> 3923<br>         <b>Casual Trips:</b> 691         </div>`)[0];
+                popup_85d002ff95ebb63b7a6c874a64c8301f.setContent(html_6bd29686e8baf2e7ca00a02607d0d28b);
+            
+        
+
+        marker_b604a1734a68b5bbe06f8e1928fade1b.bindPopup(popup_85d002ff95ebb63b7a6c874a64c8301f)
+        ;
+
+        
+    
+    
+            marker_b604a1734a68b5bbe06f8e1928fade1b.bindTooltip(
+                `<div>
+                     E 14 St & 1 Ave
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_a73e76f1caa00d625af943d4526ab13e = L.marker(
+                [40.72615604980408, -73.99510189890862],
+                {
+}
+            ).addTo(marker_cluster_7956001d444458fcd58a725d04aacc50);
+        
+    
+        var popup_92ab93423d4372cf15d79d522c986b85 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d21074378db32d0ee3f81a67ed80b4da = $(`<div id="html_d21074378db32d0ee3f81a67ed80b4da" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> Bleecker St & Crosby St<br>         <b>Food Cart Score:</b> 0.464<br>         <b>Total Trips:</b> 5768<br>         <b>Lunch Trips:</b> 1262<br>         <b>Weekday Trips:</b> 4231<br>         <b>Casual Trips:</b> 654         </div>`)[0];
+                popup_92ab93423d4372cf15d79d522c986b85.setContent(html_d21074378db32d0ee3f81a67ed80b4da);
+            
+        
+
+        marker_a73e76f1caa00d625af943d4526ab13e.bindPopup(popup_92ab93423d4372cf15d79d522c986b85)
+        ;
+
+        
+    
+    
+            marker_a73e76f1caa00d625af943d4526ab13e.bindTooltip(
+                `<div>
+                     Bleecker St & Crosby St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_4ab2996f6e02f7ed76984069bcaf0d5e = L.marker(
+                [40.73291553, -74.00711384],
+                {
+}
+            ).addTo(marker_cluster_7956001d444458fcd58a725d04aacc50);
+        
+    
+        var popup_dd488f74da60cb35a4565efb16d52ab6 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_cd34b6d4bae78b4a26b05d6455485fcd = $(`<div id="html_cd34b6d4bae78b4a26b05d6455485fcd" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> Christopher St & Greenwich St<br>         <b>Food Cart Score:</b> 0.464<br>         <b>Total Trips:</b> 6103<br>         <b>Lunch Trips:</b> 1182<br>         <b>Weekday Trips:</b> 4329<br>         <b>Casual Trips:</b> 799         </div>`)[0];
+                popup_dd488f74da60cb35a4565efb16d52ab6.setContent(html_cd34b6d4bae78b4a26b05d6455485fcd);
+            
+        
+
+        marker_4ab2996f6e02f7ed76984069bcaf0d5e.bindPopup(popup_dd488f74da60cb35a4565efb16d52ab6)
+        ;
+
+        
+    
+    
+            marker_4ab2996f6e02f7ed76984069bcaf0d5e.bindTooltip(
+                `<div>
+                     Christopher St & Greenwich St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_870850aee26fc9798eaa3132f175eccc = L.marker(
+                [40.71559509, -73.9870295],
+                {
+}
+            ).addTo(marker_cluster_7956001d444458fcd58a725d04aacc50);
+        
+    
+        var popup_70549ec280d123ad74d1de6acd97bb6e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8ffa14bb586c77dd2c4d3d1f7fc799fc = $(`<div id="html_8ffa14bb586c77dd2c4d3d1f7fc799fc" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> Clinton St & Grand St<br>         <b>Food Cart Score:</b> 0.461<br>         <b>Total Trips:</b> 5746<br>         <b>Lunch Trips:</b> 1338<br>         <b>Weekday Trips:</b> 3976<br>         <b>Casual Trips:</b> 403         </div>`)[0];
+                popup_70549ec280d123ad74d1de6acd97bb6e.setContent(html_8ffa14bb586c77dd2c4d3d1f7fc799fc);
+            
+        
+
+        marker_870850aee26fc9798eaa3132f175eccc.bindPopup(popup_70549ec280d123ad74d1de6acd97bb6e)
+        ;
+
+        
+    
+    
+            marker_870850aee26fc9798eaa3132f175eccc.bindTooltip(
+                `<div>
+                     Clinton St & Grand St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_b6b2f984e3bddfa6ce44952473510f95 = L.marker(
+                [40.7457121, -73.98194829],
+                {
+}
+            ).addTo(marker_cluster_7956001d444458fcd58a725d04aacc50);
+        
+    
+        var popup_f32223068098b72285dd0a67cbcf95c2 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ca4088f3c4002c8fcbfa40b56b558e24 = $(`<div id="html_ca4088f3c4002c8fcbfa40b56b558e24" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> E 32 St & Park Ave<br>         <b>Food Cart Score:</b> 0.461<br>         <b>Total Trips:</b> 5528<br>         <b>Lunch Trips:</b> 1239<br>         <b>Weekday Trips:</b> 4586<br>         <b>Casual Trips:</b> 527         </div>`)[0];
+                popup_f32223068098b72285dd0a67cbcf95c2.setContent(html_ca4088f3c4002c8fcbfa40b56b558e24);
+            
+        
+
+        marker_b6b2f984e3bddfa6ce44952473510f95.bindPopup(popup_f32223068098b72285dd0a67cbcf95c2)
+        ;
+
+        
+    
+    
+            marker_b6b2f984e3bddfa6ce44952473510f95.bindTooltip(
+                `<div>
+                     E 32 St & Park Ave
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_a5f3be458af09d34567fd843bd663747 = L.marker(
+                [40.716967, -73.956388],
+                {
+}
+            ).addTo(marker_cluster_7956001d444458fcd58a725d04aacc50);
+        
+    
+        var popup_cacf8b31e5f93f86f07d548b3bef1dc8 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_3a71e78e9bec5e47b82b6004e25df301 = $(`<div id="html_3a71e78e9bec5e47b82b6004e25df301" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> N 7 St & Driggs Ave<br>         <b>Food Cart Score:</b> 0.461<br>         <b>Total Trips:</b> 7030<br>         <b>Lunch Trips:</b> 980<br>         <b>Weekday Trips:</b> 4794<br>         <b>Casual Trips:</b> 839         </div>`)[0];
+                popup_cacf8b31e5f93f86f07d548b3bef1dc8.setContent(html_3a71e78e9bec5e47b82b6004e25df301);
+            
+        
+
+        marker_a5f3be458af09d34567fd843bd663747.bindPopup(popup_cacf8b31e5f93f86f07d548b3bef1dc8)
+        ;
+
+        
+    
+    
+            marker_a5f3be458af09d34567fd843bd663747.bindTooltip(
+                `<div>
+                     N 7 St & Driggs Ave
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_b0f9b3beb04897b77bccecf5eb51706a = L.marker(
+                [40.746202, -73.971822],
+                {
+}
+            ).addTo(marker_cluster_7956001d444458fcd58a725d04aacc50);
+        
+    
+        var popup_0cd47f283d99acf8132d37f97e455261 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8f6b1f85cb15dea6b0738df2daf7e688 = $(`<div id="html_8f6b1f85cb15dea6b0738df2daf7e688" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> 1 Ave & E 38 St<br>         <b>Food Cart Score:</b> 0.460<br>         <b>Total Trips:</b> 5885<br>         <b>Lunch Trips:</b> 1195<br>         <b>Weekday Trips:</b> 4586<br>         <b>Casual Trips:</b> 545         </div>`)[0];
+                popup_0cd47f283d99acf8132d37f97e455261.setContent(html_8f6b1f85cb15dea6b0738df2daf7e688);
+            
+        
+
+        marker_b0f9b3beb04897b77bccecf5eb51706a.bindPopup(popup_0cd47f283d99acf8132d37f97e455261)
+        ;
+
+        
+    
+    
+            marker_b0f9b3beb04897b77bccecf5eb51706a.bindTooltip(
+                `<div>
+                     1 Ave & E 38 St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_2ae33462c82b2085cfa09527e477f741 = L.marker(
+                [40.71285887, -73.96590294],
+                {
+}
+            ).addTo(marker_cluster_7956001d444458fcd58a725d04aacc50);
+        
+    
+        var popup_53aad78275b2986a7c037006bc2d2a55 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f15905183676efc9fbf2744f0399a9d2 = $(`<div id="html_f15905183676efc9fbf2744f0399a9d2" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> S 4 St & Wythe Ave<br>         <b>Food Cart Score:</b> 0.455<br>         <b>Total Trips:</b> 5648<br>         <b>Lunch Trips:</b> 1242<br>         <b>Weekday Trips:</b> 3845<br>         <b>Casual Trips:</b> 805         </div>`)[0];
+                popup_53aad78275b2986a7c037006bc2d2a55.setContent(html_f15905183676efc9fbf2744f0399a9d2);
+            
+        
+
+        marker_2ae33462c82b2085cfa09527e477f741.bindPopup(popup_53aad78275b2986a7c037006bc2d2a55)
+        ;
+
+        
+    
+    
+            marker_2ae33462c82b2085cfa09527e477f741.bindTooltip(
+                `<div>
+                     S 4 St & Wythe Ave
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_689635f7597c7b53576a513cd427840d = L.marker(
+                [40.74691959, -74.00451887],
+                {
+}
+            ).addTo(marker_cluster_7956001d444458fcd58a725d04aacc50);
+        
+    
+        var popup_6faabe00e99be7bd553c0044f61ca47c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0952f1c1e6df4eae1726eff122635afc = $(`<div id="html_0952f1c1e6df4eae1726eff122635afc" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> W 22 St & 10 Ave<br>         <b>Food Cart Score:</b> 0.451<br>         <b>Total Trips:</b> 5630<br>         <b>Lunch Trips:</b> 1223<br>         <b>Weekday Trips:</b> 4080<br>         <b>Casual Trips:</b> 613         </div>`)[0];
+                popup_6faabe00e99be7bd553c0044f61ca47c.setContent(html_0952f1c1e6df4eae1726eff122635afc);
+            
+        
+
+        marker_689635f7597c7b53576a513cd427840d.bindPopup(popup_6faabe00e99be7bd553c0044f61ca47c)
+        ;
+
+        
+    
+    
+            marker_689635f7597c7b53576a513cd427840d.bindTooltip(
+                `<div>
+                     W 22 St & 10 Ave
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_9c6b2ec83e9f411de6ed940520fb0a94 = L.marker(
+                [40.77966809007312, -73.98093044757842],
+                {
+}
+            ).addTo(marker_cluster_7956001d444458fcd58a725d04aacc50);
+        
+    
+        var popup_1623c3b488a6e17dfda9314ff653c205 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_3b4ff459593d4ae7aaf59ce0d48871e4 = $(`<div id="html_3b4ff459593d4ae7aaf59ce0d48871e4" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> Amsterdam Ave & W 73 St<br>         <b>Food Cart Score:</b> 0.448<br>         <b>Total Trips:</b> 5579<br>         <b>Lunch Trips:</b> 1242<br>         <b>Weekday Trips:</b> 3931<br>         <b>Casual Trips:</b> 573         </div>`)[0];
+                popup_1623c3b488a6e17dfda9314ff653c205.setContent(html_3b4ff459593d4ae7aaf59ce0d48871e4);
+            
+        
+
+        marker_9c6b2ec83e9f411de6ed940520fb0a94.bindPopup(popup_1623c3b488a6e17dfda9314ff653c205)
+        ;
+
+        
+    
+    
+            marker_9c6b2ec83e9f411de6ed940520fb0a94.bindTooltip(
+                `<div>
+                     Amsterdam Ave & W 73 St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_e861e72df0b8583901fa0beaef87e5c7 = L.marker(
+                [40.77579376683666, -73.9762057363987],
+                {
+}
+            ).addTo(marker_cluster_7956001d444458fcd58a725d04aacc50);
+        
+    
+        var popup_9818748836304218984e6a9026cc4c3f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_16c36270dc10393d2a0ac20b4e81c53f = $(`<div id="html_16c36270dc10393d2a0ac20b4e81c53f" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> Central Park W & W 72 St<br>         <b>Food Cart Score:</b> 0.444<br>         <b>Total Trips:</b> 4732<br>         <b>Lunch Trips:</b> 1202<br>         <b>Weekday Trips:</b> 3100<br>         <b>Casual Trips:</b> 1546         </div>`)[0];
+                popup_9818748836304218984e6a9026cc4c3f.setContent(html_16c36270dc10393d2a0ac20b4e81c53f);
+            
+        
+
+        marker_e861e72df0b8583901fa0beaef87e5c7.bindPopup(popup_9818748836304218984e6a9026cc4c3f)
+        ;
+
+        
+    
+    
+            marker_e861e72df0b8583901fa0beaef87e5c7.bindTooltip(
+                `<div>
+                     Central Park W & W 72 St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_0720afa6083b1ca58370aa31bfd99bd9 = L.marker(
+                [40.6794388, -73.9680438],
+                {
+}
+            ).addTo(marker_cluster_7956001d444458fcd58a725d04aacc50);
+        
+    
+        var popup_839a34efdf2ef18ddb73105bdba5b84f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e579cdee6daf5e5422c080cd41b5ea2d = $(`<div id="html_e579cdee6daf5e5422c080cd41b5ea2d" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> Bergen St & Vanderbilt Ave<br>         <b>Food Cart Score:</b> 0.444<br>         <b>Total Trips:</b> 5203<br>         <b>Lunch Trips:</b> 1307<br>         <b>Weekday Trips:</b> 3504<br>         <b>Casual Trips:</b> 597         </div>`)[0];
+                popup_839a34efdf2ef18ddb73105bdba5b84f.setContent(html_e579cdee6daf5e5422c080cd41b5ea2d);
+            
+        
+
+        marker_0720afa6083b1ca58370aa31bfd99bd9.bindPopup(popup_839a34efdf2ef18ddb73105bdba5b84f)
+        ;
+
+        
+    
+    
+            marker_0720afa6083b1ca58370aa31bfd99bd9.bindTooltip(
+                `<div>
+                     Bergen St & Vanderbilt Ave
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_54922edce7ce58b80775cacb0b9f95df = L.marker(
+                [40.73971301, -73.99456405],
+                {
+}
+            ).addTo(marker_cluster_7956001d444458fcd58a725d04aacc50);
+        
+    
+        var popup_bbe428c3389d2bb5cbaff54048401883 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d38af0a6ddfb528c6bdf07a2ce6a9283 = $(`<div id="html_d38af0a6ddfb528c6bdf07a2ce6a9283" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> W 18 St & 6 Ave<br>         <b>Food Cart Score:</b> 0.442<br>         <b>Total Trips:</b> 5469<br>         <b>Lunch Trips:</b> 1175<br>         <b>Weekday Trips:</b> 4317<br>         <b>Casual Trips:</b> 494         </div>`)[0];
+                popup_bbe428c3389d2bb5cbaff54048401883.setContent(html_d38af0a6ddfb528c6bdf07a2ce6a9283);
+            
+        
+
+        marker_54922edce7ce58b80775cacb0b9f95df.bindPopup(popup_bbe428c3389d2bb5cbaff54048401883)
+        ;
+
+        
+    
+    
+            marker_54922edce7ce58b80775cacb0b9f95df.bindTooltip(
+                `<div>
+                     W 18 St & 6 Ave
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_0e38563e6db45b02819aae875f2061bf = L.marker(
+                [40.78232260730881, -73.95987510681152],
+                {
+}
+            ).addTo(marker_cluster_7956001d444458fcd58a725d04aacc50);
+        
+    
+        var popup_c84babc5a3b52a0db720cc3ff1082bb0 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b3a2272dbf83ff7e8f92f5495c44bb96 = $(`<div id="html_b3a2272dbf83ff7e8f92f5495c44bb96" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> 5 Ave & E 87 St<br>         <b>Food Cart Score:</b> 0.438<br>         <b>Total Trips:</b> 3887<br>         <b>Lunch Trips:</b> 1258<br>         <b>Weekday Trips:</b> 2611<br>         <b>Casual Trips:</b> 1659         </div>`)[0];
+                popup_c84babc5a3b52a0db720cc3ff1082bb0.setContent(html_b3a2272dbf83ff7e8f92f5495c44bb96);
+            
+        
+
+        marker_0e38563e6db45b02819aae875f2061bf.bindPopup(popup_c84babc5a3b52a0db720cc3ff1082bb0)
+        ;
+
+        
+    
+    
+            marker_0e38563e6db45b02819aae875f2061bf.bindTooltip(
+                `<div>
+                     5 Ave & E 87 St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_6eb37488b64946248a4ac052b8d55b53 = L.marker(
+                [40.74526, -73.99062],
+                {
+}
+            ).addTo(marker_cluster_7956001d444458fcd58a725d04aacc50);
+        
+    
+        var popup_e10b57a4d6a8c5a17f338de1b9f9b20f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e1b08fc68e25ce1a3a6db4373a805ad1 = $(`<div id="html_e1b08fc68e25ce1a3a6db4373a805ad1" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> W 27 St & 6 Ave<br>         <b>Food Cart Score:</b> 0.435<br>         <b>Total Trips:</b> 5490<br>         <b>Lunch Trips:</b> 1119<br>         <b>Weekday Trips:</b> 4266<br>         <b>Casual Trips:</b> 571         </div>`)[0];
+                popup_e10b57a4d6a8c5a17f338de1b9f9b20f.setContent(html_e1b08fc68e25ce1a3a6db4373a805ad1);
+            
+        
+
+        marker_6eb37488b64946248a4ac052b8d55b53.bindPopup(popup_e10b57a4d6a8c5a17f338de1b9f9b20f)
+        ;
+
+        
+    
+    
+            marker_6eb37488b64946248a4ac052b8d55b53.bindTooltip(
+                `<div>
+                     W 27 St & 6 Ave
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_e067d7b5fcb562590438b5dc0cf6d660 = L.marker(
+                [40.752062307, -73.9816324043],
+                {
+}
+            ).addTo(marker_cluster_7956001d444458fcd58a725d04aacc50);
+        
+    
+        var popup_ad971b49391693ec658597c52fc00263 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_7ab737d80ba1ada895426bcba6452979 = $(`<div id="html_7ab737d80ba1ada895426bcba6452979" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> E 40 St & 5 Ave<br>         <b>Food Cart Score:</b> 0.434<br>         <b>Total Trips:</b> 4979<br>         <b>Lunch Trips:</b> 1175<br>         <b>Weekday Trips:</b> 4171<br>         <b>Casual Trips:</b> 563         </div>`)[0];
+                popup_ad971b49391693ec658597c52fc00263.setContent(html_7ab737d80ba1ada895426bcba6452979);
+            
+        
+
+        marker_e067d7b5fcb562590438b5dc0cf6d660.bindPopup(popup_ad971b49391693ec658597c52fc00263)
+        ;
+
+        
+    
+    
+            marker_e067d7b5fcb562590438b5dc0cf6d660.bindTooltip(
+                `<div>
+                     E 40 St & 5 Ave
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_e6f8a1dd491928909e7b61603382a83b = L.marker(
+                [40.73381219196632, -73.98054420948029],
+                {
+}
+            ).addTo(marker_cluster_7956001d444458fcd58a725d04aacc50);
+        
+    
+        var popup_9f60addc1e23cd2756b355495dd951e2 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d63d3c3526107b1dd680cee3d4cc921d = $(`<div id="html_d63d3c3526107b1dd680cee3d4cc921d" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> 1 Ave & E 18 St<br>         <b>Food Cart Score:</b> 0.434<br>         <b>Total Trips:</b> 5845<br>         <b>Lunch Trips:</b> 1120<br>         <b>Weekday Trips:</b> 4089<br>         <b>Casual Trips:</b> 514         </div>`)[0];
+                popup_9f60addc1e23cd2756b355495dd951e2.setContent(html_d63d3c3526107b1dd680cee3d4cc921d);
+            
+        
+
+        marker_e6f8a1dd491928909e7b61603382a83b.bindPopup(popup_9f60addc1e23cd2756b355495dd951e2)
+        ;
+
+        
+    
+    
+            marker_e6f8a1dd491928909e7b61603382a83b.bindTooltip(
+                `<div>
+                     1 Ave & E 18 St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_cb33187a74e11493609e5310b77a11a6 = L.marker(
+                [40.74394314, -73.97966069],
+                {
+}
+            ).addTo(marker_cluster_7956001d444458fcd58a725d04aacc50);
+        
+    
+        var popup_a4d86b9bcd4775ee5eb800e0eab3e8e5 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b6bead99c7e45870fe5456816537c464 = $(`<div id="html_b6bead99c7e45870fe5456816537c464" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> E 31 St & 3 Ave<br>         <b>Food Cart Score:</b> 0.430<br>         <b>Total Trips:</b> 5720<br>         <b>Lunch Trips:</b> 1103<br>         <b>Weekday Trips:</b> 4016<br>         <b>Casual Trips:</b> 598         </div>`)[0];
+                popup_a4d86b9bcd4775ee5eb800e0eab3e8e5.setContent(html_b6bead99c7e45870fe5456816537c464);
+            
+        
+
+        marker_cb33187a74e11493609e5310b77a11a6.bindPopup(popup_a4d86b9bcd4775ee5eb800e0eab3e8e5)
+        ;
+
+        
+    
+    
+            marker_cb33187a74e11493609e5310b77a11a6.bindTooltip(
+                `<div>
+                     E 31 St & 3 Ave
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_48274d1e9948db0b950981494c9e3fd0 = L.marker(
+                [40.711444, -74.014847],
+                {
+}
+            ).addTo(marker_cluster_7956001d444458fcd58a725d04aacc50);
+        
+    
+        var popup_d87c9d585f55b8e97db9d130dcc988d4 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_3a58badec8e0bb25f42f14344eee9025 = $(`<div id="html_3a58badec8e0bb25f42f14344eee9025" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> West St & Liberty St<br>         <b>Food Cart Score:</b> 0.429<br>         <b>Total Trips:</b> 5298<br>         <b>Lunch Trips:</b> 1056<br>         <b>Weekday Trips:</b> 3932<br>         <b>Casual Trips:</b> 1027         </div>`)[0];
+                popup_d87c9d585f55b8e97db9d130dcc988d4.setContent(html_3a58badec8e0bb25f42f14344eee9025);
+            
+        
+
+        marker_48274d1e9948db0b950981494c9e3fd0.bindPopup(popup_d87c9d585f55b8e97db9d130dcc988d4)
+        ;
+
+        
+    
+    
+            marker_48274d1e9948db0b950981494c9e3fd0.bindTooltip(
+                `<div>
+                     West St & Liberty St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_9e2c276f536859c2ab8bc8cf3c31c585 = L.marker(
+                [40.77237, -73.99005],
+                {
+}
+            ).addTo(marker_cluster_7956001d444458fcd58a725d04aacc50);
+        
+    
+        var popup_1c426275ccd2e267170cacd488552708 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_282a716f0cb6b00349be1ec32ac4cb70 = $(`<div id="html_282a716f0cb6b00349be1ec32ac4cb70" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> West End Ave & W 60 St<br>         <b>Food Cart Score:</b> 0.428<br>         <b>Total Trips:</b> 5579<br>         <b>Lunch Trips:</b> 1069<br>         <b>Weekday Trips:</b> 4146<br>         <b>Casual Trips:</b> 657         </div>`)[0];
+                popup_1c426275ccd2e267170cacd488552708.setContent(html_282a716f0cb6b00349be1ec32ac4cb70);
+            
+        
+
+        marker_9e2c276f536859c2ab8bc8cf3c31c585.bindPopup(popup_1c426275ccd2e267170cacd488552708)
+        ;
+
+        
+    
+    
+            marker_9e2c276f536859c2ab8bc8cf3c31c585.bindTooltip(
+                `<div>
+                     West End Ave & W 60 St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_8bc724e1c498e83d36ddd19f347fb586 = L.marker(
+                [40.72019576, -73.98997825],
+                {
+}
+            ).addTo(marker_cluster_7956001d444458fcd58a725d04aacc50);
+        
+    
+        var popup_9f1403ba46691a6e64157063699a6ae2 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_143bc3e991cec6e292d29a95ca2a5e2b = $(`<div id="html_143bc3e991cec6e292d29a95ca2a5e2b" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> Allen St & Rivington St<br>         <b>Food Cart Score:</b> 0.428<br>         <b>Total Trips:</b> 5269<br>         <b>Lunch Trips:</b> 1160<br>         <b>Weekday Trips:</b> 3419<br>         <b>Casual Trips:</b> 860         </div>`)[0];
+                popup_9f1403ba46691a6e64157063699a6ae2.setContent(html_143bc3e991cec6e292d29a95ca2a5e2b);
+            
+        
+
+        marker_8bc724e1c498e83d36ddd19f347fb586.bindPopup(popup_9f1403ba46691a6e64157063699a6ae2)
+        ;
+
+        
+    
+    
+            marker_8bc724e1c498e83d36ddd19f347fb586.bindTooltip(
+                `<div>
+                     Allen St & Rivington St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_ffbe66afbd9f73c6edc6e3b0a6a9f0b8 = L.marker(
+                [40.762009, -73.996975],
+                {
+}
+            ).addTo(marker_cluster_7956001d444458fcd58a725d04aacc50);
+        
+    
+        var popup_b6a23a7528fa3bbbcf9ce69ede7e32cb = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_026d63db17b0e0c670edf5405db06d58 = $(`<div id="html_026d63db17b0e0c670edf5405db06d58" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> W 44 St & 11 Ave<br>         <b>Food Cart Score:</b> 0.427<br>         <b>Total Trips:</b> 5541<br>         <b>Lunch Trips:</b> 1083<br>         <b>Weekday Trips:</b> 4244<br>         <b>Casual Trips:</b> 531         </div>`)[0];
+                popup_b6a23a7528fa3bbbcf9ce69ede7e32cb.setContent(html_026d63db17b0e0c670edf5405db06d58);
+            
+        
+
+        marker_ffbe66afbd9f73c6edc6e3b0a6a9f0b8.bindPopup(popup_b6a23a7528fa3bbbcf9ce69ede7e32cb)
+        ;
+
+        
+    
+    
+            marker_ffbe66afbd9f73c6edc6e3b0a6a9f0b8.bindTooltip(
+                `<div>
+                     W 44 St & 11 Ave
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_ee26272093b66510a588acf9048d6462 = L.marker(
+                [40.7277140777778, -74.01129573583603],
+                {
+}
+            ).addTo(marker_cluster_7956001d444458fcd58a725d04aacc50);
+        
+    
+        var popup_631c9250ab31c4c52865c96da4628207 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_15892a8a9cb05b4c8d51ffd900ac62fc = $(`<div id="html_15892a8a9cb05b4c8d51ffd900ac62fc" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> Pier 40 - Hudson River Park<br>         <b>Food Cart Score:</b> 0.425<br>         <b>Total Trips:</b> 5340<br>         <b>Lunch Trips:</b> 1013<br>         <b>Weekday Trips:</b> 3618<br>         <b>Casual Trips:</b> 1303         </div>`)[0];
+                popup_631c9250ab31c4c52865c96da4628207.setContent(html_15892a8a9cb05b4c8d51ffd900ac62fc);
+            
+        
+
+        marker_ee26272093b66510a588acf9048d6462.bindPopup(popup_631c9250ab31c4c52865c96da4628207)
+        ;
+
+        
+    
+    
+            marker_ee26272093b66510a588acf9048d6462.bindTooltip(
+                `<div>
+                     Pier 40 - Hudson River Park
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_ce4ff5949d45d772643b4c8641deda82 = L.marker(
+                [40.74172351097472, -73.97809267044067],
+                {
+}
+            ).addTo(marker_cluster_7956001d444458fcd58a725d04aacc50);
+        
+    
+        var popup_d59e5d837661e221ffb60f21d3a4c014 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_bace6fa9402f2d6c4ee907b5000c7178 = $(`<div id="html_bace6fa9402f2d6c4ee907b5000c7178" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> 2 Ave & E 29 St<br>         <b>Food Cart Score:</b> 0.423<br>         <b>Total Trips:</b> 5643<br>         <b>Lunch Trips:</b> 1049<br>         <b>Weekday Trips:</b> 4054<br>         <b>Casual Trips:</b> 658         </div>`)[0];
+                popup_d59e5d837661e221ffb60f21d3a4c014.setContent(html_bace6fa9402f2d6c4ee907b5000c7178);
+            
+        
+
+        marker_ce4ff5949d45d772643b4c8641deda82.bindPopup(popup_d59e5d837661e221ffb60f21d3a4c014)
+        ;
+
+        
+    
+    
+            marker_ce4ff5949d45d772643b4c8641deda82.bindTooltip(
+                `<div>
+                     2 Ave & E 29 St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_075db1b60abdaeb95963fef38ead2676 = L.marker(
+                [40.74238787, -73.99726235],
+                {
+}
+            ).addTo(marker_cluster_7956001d444458fcd58a725d04aacc50);
+        
+    
+        var popup_961cfcc7b9355af3022238568e45e077 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_80966ec0342b8c7840e891550e173a5d = $(`<div id="html_80966ec0342b8c7840e891550e173a5d" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> W 20 St & 7 Ave<br>         <b>Food Cart Score:</b> 0.421<br>         <b>Total Trips:</b> 5299<br>         <b>Lunch Trips:</b> 1159<br>         <b>Weekday Trips:</b> 3783<br>         <b>Casual Trips:</b> 430         </div>`)[0];
+                popup_961cfcc7b9355af3022238568e45e077.setContent(html_80966ec0342b8c7840e891550e173a5d);
+            
+        
+
+        marker_075db1b60abdaeb95963fef38ead2676.bindPopup(popup_961cfcc7b9355af3022238568e45e077)
+        ;
+
+        
+    
+    
+            marker_075db1b60abdaeb95963fef38ead2676.bindTooltip(
+                `<div>
+                     W 20 St & 7 Ave
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_521160e23f355a3b6bd1790d787a7c65 = L.marker(
+                [40.7459849, -73.98629487],
+                {
+}
+            ).addTo(marker_cluster_7956001d444458fcd58a725d04aacc50);
+        
+    
+        var popup_05707e89288ce86a6bdf7dc0f3524187 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_94a5d076f835c4b9e382be408163905b = $(`<div id="html_94a5d076f835c4b9e382be408163905b" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> 5 Ave & E 30 St<br>         <b>Food Cart Score:</b> 0.421<br>         <b>Total Trips:</b> 4757<br>         <b>Lunch Trips:</b> 1169<br>         <b>Weekday Trips:</b> 3753<br>         <b>Casual Trips:</b> 597         </div>`)[0];
+                popup_05707e89288ce86a6bdf7dc0f3524187.setContent(html_94a5d076f835c4b9e382be408163905b);
+            
+        
+
+        marker_521160e23f355a3b6bd1790d787a7c65.bindPopup(popup_05707e89288ce86a6bdf7dc0f3524187)
+        ;
+
+        
+    
+    
+            marker_521160e23f355a3b6bd1790d787a7c65.bindTooltip(
+                `<div>
+                     5 Ave & E 30 St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_9cf6d9964ce3fc856258f9423f33fc1b = L.marker(
+                [40.76663814, -73.95348296],
+                {
+}
+            ).addTo(marker_cluster_7956001d444458fcd58a725d04aacc50);
+        
+    
+        var popup_47f98e25e6d7788c24483f2278cf8bc4 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_98c4a00517cf069918bc8d14b16ed714 = $(`<div id="html_98c4a00517cf069918bc8d14b16ed714" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> E 72 St & York Ave<br>         <b>Food Cart Score:</b> 0.417<br>         <b>Total Trips:</b> 4947<br>         <b>Lunch Trips:</b> 1123<br>         <b>Weekday Trips:</b> 4132<br>         <b>Casual Trips:</b> 366         </div>`)[0];
+                popup_47f98e25e6d7788c24483f2278cf8bc4.setContent(html_98c4a00517cf069918bc8d14b16ed714);
+            
+        
+
+        marker_9cf6d9964ce3fc856258f9423f33fc1b.bindPopup(popup_47f98e25e6d7788c24483f2278cf8bc4)
+        ;
+
+        
+    
+    
+            marker_9cf6d9964ce3fc856258f9423f33fc1b.bindTooltip(
+                `<div>
+                     E 72 St & York Ave
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_63e5913f317875f352632ca99bd0533d = L.marker(
+                [40.72951496224949, -73.99075269699097],
+                {
+}
+            ).addTo(marker_cluster_7956001d444458fcd58a725d04aacc50);
+        
+    
+        var popup_dd785df705c18fed3f81deae7ba4c660 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_83aefa02fbda0ce7f44706e828ae2bb6 = $(`<div id="html_83aefa02fbda0ce7f44706e828ae2bb6" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> Cooper Square & Astor Pl<br>         <b>Food Cart Score:</b> 0.413<br>         <b>Total Trips:</b> 5277<br>         <b>Lunch Trips:</b> 1056<br>         <b>Weekday Trips:</b> 3985<br>         <b>Casual Trips:</b> 551         </div>`)[0];
+                popup_dd785df705c18fed3f81deae7ba4c660.setContent(html_83aefa02fbda0ce7f44706e828ae2bb6);
+            
+        
+
+        marker_63e5913f317875f352632ca99bd0533d.bindPopup(popup_dd785df705c18fed3f81deae7ba4c660)
+        ;
+
+        
+    
+    
+            marker_63e5913f317875f352632ca99bd0533d.bindTooltip(
+                `<div>
+                     Cooper Square & Astor Pl
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_edf202972ea168c076aae007664826fd = L.marker(
+                [40.71779817737835, -73.99316132068634],
+                {
+}
+            ).addTo(marker_cluster_7956001d444458fcd58a725d04aacc50);
+        
+    
+        var popup_ce8f32dedfeb225c49371da4d9e52695 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_585012c0251e88dffedf08e76679ebb9 = $(`<div id="html_585012c0251e88dffedf08e76679ebb9" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> Forsyth St & Grand St<br>         <b>Food Cart Score:</b> 0.412<br>         <b>Total Trips:</b> 5018<br>         <b>Lunch Trips:</b> 1131<br>         <b>Weekday Trips:</b> 3585<br>         <b>Casual Trips:</b> 537         </div>`)[0];
+                popup_ce8f32dedfeb225c49371da4d9e52695.setContent(html_585012c0251e88dffedf08e76679ebb9);
+            
+        
+
+        marker_edf202972ea168c076aae007664826fd.bindPopup(popup_ce8f32dedfeb225c49371da4d9e52695)
+        ;
+
+        
+    
+    
+            marker_edf202972ea168c076aae007664826fd.bindTooltip(
+                `<div>
+                     Forsyth St & Grand St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_be525da6c738767d84d032e77780cd0f = L.marker(
+                [40.76017739537783, -73.98486793041229],
+                {
+}
+            ).addTo(marker_cluster_7956001d444458fcd58a725d04aacc50);
+        
+    
+        var popup_014df1a3e46130e7d79a8330bc7c59e2 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_bdf87a67aed83568ab12037c6005006d = $(`<div id="html_bdf87a67aed83568ab12037c6005006d" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> Broadway & W 48 St<br>         <b>Food Cart Score:</b> 0.410<br>         <b>Total Trips:</b> 5021<br>         <b>Lunch Trips:</b> 956<br>         <b>Weekday Trips:</b> 4125<br>         <b>Casual Trips:</b> 946         </div>`)[0];
+                popup_014df1a3e46130e7d79a8330bc7c59e2.setContent(html_bdf87a67aed83568ab12037c6005006d);
+            
+        
+
+        marker_be525da6c738767d84d032e77780cd0f.bindPopup(popup_014df1a3e46130e7d79a8330bc7c59e2)
+        ;
+
+        
+    
+    
+            marker_be525da6c738767d84d032e77780cd0f.bindTooltip(
+                `<div>
+                     Broadway & W 48 St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_ccb38885578283dfc8f7c3e78121e7a0 = L.marker(
+                [40.76344058, -73.98268129],
+                {
+}
+            ).addTo(marker_cluster_7956001d444458fcd58a725d04aacc50);
+        
+    
+        var popup_4bda88c60dd060130bababc40e59898b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_3c94aacb1503ea4a8aaedc860e0c069f = $(`<div id="html_3c94aacb1503ea4a8aaedc860e0c069f" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> Broadway & W 53 St<br>         <b>Food Cart Score:</b> 0.409<br>         <b>Total Trips:</b> 4777<br>         <b>Lunch Trips:</b> 1075<br>         <b>Weekday Trips:</b> 3910<br>         <b>Casual Trips:</b> 602         </div>`)[0];
+                popup_4bda88c60dd060130bababc40e59898b.setContent(html_3c94aacb1503ea4a8aaedc860e0c069f);
+            
+        
+
+        marker_ccb38885578283dfc8f7c3e78121e7a0.bindPopup(popup_4bda88c60dd060130bababc40e59898b)
+        ;
+
+        
+    
+    
+            marker_ccb38885578283dfc8f7c3e78121e7a0.bindTooltip(
+                `<div>
+                     Broadway & W 53 St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_1cd79ae9f9a0d434c243da14f443e130 = L.marker(
+                [40.714211, -73.981095],
+                {
+}
+            ).addTo(marker_cluster_7956001d444458fcd58a725d04aacc50);
+        
+    
+        var popup_cd949e72c3f23d1743bd7b626fc56eab = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_738f13d130f36bc04f2d65e7baf5e20e = $(`<div id="html_738f13d130f36bc04f2d65e7baf5e20e" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> Henry St & Grand St<br>         <b>Food Cart Score:</b> 0.409<br>         <b>Total Trips:</b> 5390<br>         <b>Lunch Trips:</b> 1082<br>         <b>Weekday Trips:</b> 3849<br>         <b>Casual Trips:</b> 361         </div>`)[0];
+                popup_cd949e72c3f23d1743bd7b626fc56eab.setContent(html_738f13d130f36bc04f2d65e7baf5e20e);
+            
+        
+
+        marker_1cd79ae9f9a0d434c243da14f443e130.bindPopup(popup_cd949e72c3f23d1743bd7b626fc56eab)
+        ;
+
+        
+    
+    
+            marker_1cd79ae9f9a0d434c243da14f443e130.bindTooltip(
+                `<div>
+                     Henry St & Grand St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_a2e77e9f02bb48b6a4ccc58f09d46544 = L.marker(
+                [40.75516719072139, -74.00059908628464],
+                {
+}
+            ).addTo(marker_cluster_7956001d444458fcd58a725d04aacc50);
+        
+    
+        var popup_6581f710996484e07c3d5f6512b9b5e8 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c3b525e657108bfee1331be6723ff83e = $(`<div id="html_c3b525e657108bfee1331be6723ff83e" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> W 34 St & Hudson Blvd E<br>         <b>Food Cart Score:</b> 0.408<br>         <b>Total Trips:</b> 4468<br>         <b>Lunch Trips:</b> 1146<br>         <b>Weekday Trips:</b> 3544<br>         <b>Casual Trips:</b> 587         </div>`)[0];
+                popup_6581f710996484e07c3d5f6512b9b5e8.setContent(html_c3b525e657108bfee1331be6723ff83e);
+            
+        
+
+        marker_a2e77e9f02bb48b6a4ccc58f09d46544.bindPopup(popup_6581f710996484e07c3d5f6512b9b5e8)
+        ;
+
+        
+    
+    
+            marker_a2e77e9f02bb48b6a4ccc58f09d46544.bindTooltip(
+                `<div>
+                     W 34 St & Hudson Blvd E
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_2ba6bdbce1b3745029566c59685ed8b0 = L.marker(
+                [40.72743423, -73.99379025],
+                {
+}
+            ).addTo(marker_cluster_7956001d444458fcd58a725d04aacc50);
+        
+    
+        var popup_2305f984783aa0790557f276fd7c3177 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_38dd7df93ec4bdacad2d2b1618370dd0 = $(`<div id="html_38dd7df93ec4bdacad2d2b1618370dd0" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> Great Jones St<br>         <b>Food Cart Score:</b> 0.408<br>         <b>Total Trips:</b> 4939<br>         <b>Lunch Trips:</b> 1117<br>         <b>Weekday Trips:</b> 3586<br>         <b>Casual Trips:</b> 529         </div>`)[0];
+                popup_2305f984783aa0790557f276fd7c3177.setContent(html_38dd7df93ec4bdacad2d2b1618370dd0);
+            
+        
+
+        marker_2ba6bdbce1b3745029566c59685ed8b0.bindPopup(popup_2305f984783aa0790557f276fd7c3177)
+        ;
+
+        
+    
+    
+            marker_2ba6bdbce1b3745029566c59685ed8b0.bindTooltip(
+                `<div>
+                     Great Jones St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_4f71282e45f8aafa9e303f423627fedd = L.marker(
+                [40.74665, -73.99392],
+                {
+}
+            ).addTo(marker_cluster_7956001d444458fcd58a725d04aacc50);
+        
+    
+        var popup_b9b0a063271eb94a04ef8cfb18243562 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8621a58672ec3346ed92008d8c7410e4 = $(`<div id="html_8621a58672ec3346ed92008d8c7410e4" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> W 27 St & 7 Ave<br>         <b>Food Cart Score:</b> 0.408<br>         <b>Total Trips:</b> 4971<br>         <b>Lunch Trips:</b> 1069<br>         <b>Weekday Trips:</b> 3894<br>         <b>Casual Trips:</b> 526         </div>`)[0];
+                popup_b9b0a063271eb94a04ef8cfb18243562.setContent(html_8621a58672ec3346ed92008d8c7410e4);
+            
+        
+
+        marker_4f71282e45f8aafa9e303f423627fedd.bindPopup(popup_b9b0a063271eb94a04ef8cfb18243562)
+        ;
+
+        
+    
+    
+            marker_4f71282e45f8aafa9e303f423627fedd.bindTooltip(
+                `<div>
+                     W 27 St & 7 Ave
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_14b48a6e525902cacf512bc265012486 = L.marker(
+                [40.7494985460252, -73.97729203113158],
+                {
+}
+            ).addTo(marker_cluster_7956001d444458fcd58a725d04aacc50);
+        
+    
+        var popup_fa90d0ef25bd9a891a58de0ebbf5c65b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_25a14693d2b0f6367711545616fbb81c = $(`<div id="html_25a14693d2b0f6367711545616fbb81c" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> E 39 St & Lexington Ave<br>         <b>Food Cart Score:</b> 0.408<br>         <b>Total Trips:</b> 5062<br>         <b>Lunch Trips:</b> 1034<br>         <b>Weekday Trips:</b> 4025<br>         <b>Casual Trips:</b> 562         </div>`)[0];
+                popup_fa90d0ef25bd9a891a58de0ebbf5c65b.setContent(html_25a14693d2b0f6367711545616fbb81c);
+            
+        
+
+        marker_14b48a6e525902cacf512bc265012486.bindPopup(popup_fa90d0ef25bd9a891a58de0ebbf5c65b)
+        ;
+
+        
+    
+    
+            marker_14b48a6e525902cacf512bc265012486.bindTooltip(
+                `<div>
+                     E 39 St & Lexington Ave
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_217e98af5a3c57f151514b3ad3c9d0fc = L.marker(
+                [40.717318403855785, -73.99067759513855],
+                {
+}
+            ).addTo(marker_cluster_7956001d444458fcd58a725d04aacc50);
+        
+    
+        var popup_ef068777dbb758f887c9ea8276845db5 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_cd05ca030e4fdd31caf749616116663c = $(`<div id="html_cd05ca030e4fdd31caf749616116663c" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> Orchard St & Grand St<br>         <b>Food Cart Score:</b> 0.407<br>         <b>Total Trips:</b> 4975<br>         <b>Lunch Trips:</b> 1123<br>         <b>Weekday Trips:</b> 3308<br>         <b>Casual Trips:</b> 647         </div>`)[0];
+                popup_ef068777dbb758f887c9ea8276845db5.setContent(html_cd05ca030e4fdd31caf749616116663c);
+            
+        
+
+        marker_217e98af5a3c57f151514b3ad3c9d0fc.bindPopup(popup_ef068777dbb758f887c9ea8276845db5)
+        ;
+
+        
+    
+    
+            marker_217e98af5a3c57f151514b3ad3c9d0fc.bindTooltip(
+                `<div>
+                     Orchard St & Grand St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_8bbee3456dd1d93a5fda81269b2aedeb = L.marker(
+                [40.7454973, -74.00197139],
+                {
+}
+            ).addTo(marker_cluster_7956001d444458fcd58a725d04aacc50);
+        
+    
+        var popup_3b6ca3beed1d01651790056111682b8e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5759f9dd9c4e7f781432d94902e848fc = $(`<div id="html_5759f9dd9c4e7f781432d94902e848fc" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> 9 Ave & W 22 St<br>         <b>Food Cart Score:</b> 0.404<br>         <b>Total Trips:</b> 5114<br>         <b>Lunch Trips:</b> 1107<br>         <b>Weekday Trips:</b> 3516<br>         <b>Casual Trips:</b> 458         </div>`)[0];
+                popup_3b6ca3beed1d01651790056111682b8e.setContent(html_5759f9dd9c4e7f781432d94902e848fc);
+            
+        
+
+        marker_8bbee3456dd1d93a5fda81269b2aedeb.bindPopup(popup_3b6ca3beed1d01651790056111682b8e)
+        ;
+
+        
+    
+    
+            marker_8bbee3456dd1d93a5fda81269b2aedeb.bindTooltip(
+                `<div>
+                     9 Ave & W 22 St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_5d8a9412137bc60d3933af4a0dc2dc5a = L.marker(
+                [40.72953837, -73.98426726],
+                {
+}
+            ).addTo(marker_cluster_7956001d444458fcd58a725d04aacc50);
+        
+    
+        var popup_153fa496096c858342c91a826859a144 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b307b418bf8bed06e29c7412e75a6042 = $(`<div id="html_b307b418bf8bed06e29c7412e75a6042" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> E 11 St & 1 Ave<br>         <b>Food Cart Score:</b> 0.401<br>         <b>Total Trips:</b> 4989<br>         <b>Lunch Trips:</b> 1100<br>         <b>Weekday Trips:</b> 3390<br>         <b>Casual Trips:</b> 542         </div>`)[0];
+                popup_153fa496096c858342c91a826859a144.setContent(html_b307b418bf8bed06e29c7412e75a6042);
+            
+        
+
+        marker_5d8a9412137bc60d3933af4a0dc2dc5a.bindPopup(popup_153fa496096c858342c91a826859a144)
+        ;
+
+        
+    
+    
+            marker_5d8a9412137bc60d3933af4a0dc2dc5a.bindTooltip(
+                `<div>
+                     E 11 St & 1 Ave
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_06717f628b6c4dad7c669090e90e9593 = L.marker(
+                [40.73726186, -73.99238967],
+                {
+}
+            ).addTo(marker_cluster_7956001d444458fcd58a725d04aacc50);
+        
+    
+        var popup_62c832ee7c3563b56257dd1d6d75f391 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_198be42323bc02dc4a49c1de039fc283 = $(`<div id="html_198be42323bc02dc4a49c1de039fc283" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> E 16 St & 5 Ave<br>         <b>Food Cart Score:</b> 0.401<br>         <b>Total Trips:</b> 4230<br>         <b>Lunch Trips:</b> 1159<br>         <b>Weekday Trips:</b> 3411<br>         <b>Casual Trips:</b> 493         </div>`)[0];
+                popup_62c832ee7c3563b56257dd1d6d75f391.setContent(html_198be42323bc02dc4a49c1de039fc283);
+            
+        
+
+        marker_06717f628b6c4dad7c669090e90e9593.bindPopup(popup_62c832ee7c3563b56257dd1d6d75f391)
+        ;
+
+        
+    
+    
+            marker_06717f628b6c4dad7c669090e90e9593.bindTooltip(
+                `<div>
+                     E 16 St & 5 Ave
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_8a1e60122b415c62a4963abb5a094807 = L.marker(
+                [40.72217444, -73.98368779],
+                {
+}
+            ).addTo(marker_cluster_7956001d444458fcd58a725d04aacc50);
+        
+    
+        var popup_0586ef50f1e64152b10562ffebe7f285 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a14d2e27671a3a03a5bc912803dd1ef3 = $(`<div id="html_a14d2e27671a3a03a5bc912803dd1ef3" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> E 2 St & Ave B<br>         <b>Food Cart Score:</b> 0.400<br>         <b>Total Trips:</b> 5011<br>         <b>Lunch Trips:</b> 1083<br>         <b>Weekday Trips:</b> 3488<br>         <b>Casual Trips:</b> 514         </div>`)[0];
+                popup_0586ef50f1e64152b10562ffebe7f285.setContent(html_a14d2e27671a3a03a5bc912803dd1ef3);
+            
+        
+
+        marker_8a1e60122b415c62a4963abb5a094807.bindPopup(popup_0586ef50f1e64152b10562ffebe7f285)
+        ;
+
+        
+    
+    
+            marker_8a1e60122b415c62a4963abb5a094807.bindTooltip(
+                `<div>
+                     E 2 St & Ave B
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_8287f3cb701ef3f9d6bc98e8ec5067a7 = L.marker(
+                [40.72633085971696, -73.98616880178452],
+                {
+}
+            ).addTo(marker_cluster_7956001d444458fcd58a725d04aacc50);
+        
+    
+        var popup_8f3f772e5dcd9f9b6af7f55d6f7c586f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f2528ca3c3ab601803c3ec5f2ccb147b = $(`<div id="html_f2528ca3c3ab601803c3ec5f2ccb147b" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> 1 Ave & E 6 St<br>         <b>Food Cart Score:</b> 0.397<br>         <b>Total Trips:</b> 4888<br>         <b>Lunch Trips:</b> 1102<br>         <b>Weekday Trips:</b> 3293<br>         <b>Casual Trips:</b> 519         </div>`)[0];
+                popup_8f3f772e5dcd9f9b6af7f55d6f7c586f.setContent(html_f2528ca3c3ab601803c3ec5f2ccb147b);
+            
+        
+
+        marker_8287f3cb701ef3f9d6bc98e8ec5067a7.bindPopup(popup_8f3f772e5dcd9f9b6af7f55d6f7c586f)
+        ;
+
+        
+    
+    
+            marker_8287f3cb701ef3f9d6bc98e8ec5067a7.bindTooltip(
+                `<div>
+                     1 Ave & E 6 St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_22382478716e47ddc05474c42a93e2b8 = L.marker(
+                [40.73829, -73.99006],
+                {
+}
+            ).addTo(marker_cluster_7956001d444458fcd58a725d04aacc50);
+        
+    
+        var popup_9d4b8bd0778c4eab4d079795c6051eba = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0cd241fb07bd5cdf40998c2c819cb738 = $(`<div id="html_0cd241fb07bd5cdf40998c2c819cb738" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> Broadway & E 19 St<br>         <b>Food Cart Score:</b> 0.397<br>         <b>Total Trips:</b> 4930<br>         <b>Lunch Trips:</b> 1014<br>         <b>Weekday Trips:</b> 3889<br>         <b>Casual Trips:</b> 504         </div>`)[0];
+                popup_9d4b8bd0778c4eab4d079795c6051eba.setContent(html_0cd241fb07bd5cdf40998c2c819cb738);
+            
+        
+
+        marker_22382478716e47ddc05474c42a93e2b8.bindPopup(popup_9d4b8bd0778c4eab4d079795c6051eba)
+        ;
+
+        
+    
+    
+            marker_22382478716e47ddc05474c42a93e2b8.bindTooltip(
+                `<div>
+                     Broadway & E 19 St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_adfc9165ddcbd7d4e4c91db5b2eca665 = L.marker(
+                [40.75066386, -74.00176802],
+                {
+}
+            ).addTo(marker_cluster_7956001d444458fcd58a725d04aacc50);
+        
+    
+        var popup_3e6e9b4dfb31a866e31458faf90278fa = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5b9484b775d7941902d788cb5c1c900f = $(`<div id="html_5b9484b775d7941902d788cb5c1c900f" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> 10 Ave & W 28 St<br>         <b>Food Cart Score:</b> 0.396<br>         <b>Total Trips:</b> 5229<br>         <b>Lunch Trips:</b> 990<br>         <b>Weekday Trips:</b> 3793<br>         <b>Casual Trips:</b> 543         </div>`)[0];
+                popup_3e6e9b4dfb31a866e31458faf90278fa.setContent(html_5b9484b775d7941902d788cb5c1c900f);
+            
+        
+
+        marker_adfc9165ddcbd7d4e4c91db5b2eca665.bindPopup(popup_3e6e9b4dfb31a866e31458faf90278fa)
+        ;
+
+        
+    
+    
+            marker_adfc9165ddcbd7d4e4c91db5b2eca665.bindTooltip(
+                `<div>
+                     10 Ave & W 28 St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_af259e38ecb38c19bc69d8cafe525013 = L.marker(
+                [40.74096374, -73.98602213],
+                {
+}
+            ).addTo(marker_cluster_7956001d444458fcd58a725d04aacc50);
+        
+    
+        var popup_a1456c5437c7b4a8de28896be01271e4 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e283bdfe4b27dac30ce52e3d90a05782 = $(`<div id="html_e283bdfe4b27dac30ce52e3d90a05782" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> E 24 St & Park Ave S<br>         <b>Food Cart Score:</b> 0.395<br>         <b>Total Trips:</b> 5055<br>         <b>Lunch Trips:</b> 991<br>         <b>Weekday Trips:</b> 4113<br>         <b>Casual Trips:</b> 353         </div>`)[0];
+                popup_a1456c5437c7b4a8de28896be01271e4.setContent(html_e283bdfe4b27dac30ce52e3d90a05782);
+            
+        
+
+        marker_af259e38ecb38c19bc69d8cafe525013.bindPopup(popup_a1456c5437c7b4a8de28896be01271e4)
+        ;
+
+        
+    
+    
+            marker_af259e38ecb38c19bc69d8cafe525013.bindTooltip(
+                `<div>
+                     E 24 St & Park Ave S
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_466f96f74154b98d9d32a7fddd723ca6 = L.marker(
+                [40.739445, -73.976806],
+                {
+}
+            ).addTo(marker_cluster_7956001d444458fcd58a725d04aacc50);
+        
+    
+        var popup_c3c559cff2ce4f5f75ff96f6a475dd7b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_652bb428293b5b4a2cfe9ac8262840cd = $(`<div id="html_652bb428293b5b4a2cfe9ac8262840cd" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> E 27 St & 1 Ave<br>         <b>Food Cart Score:</b> 0.395<br>         <b>Total Trips:</b> 4554<br>         <b>Lunch Trips:</b> 1071<br>         <b>Weekday Trips:</b> 3824<br>         <b>Casual Trips:</b> 360         </div>`)[0];
+                popup_c3c559cff2ce4f5f75ff96f6a475dd7b.setContent(html_652bb428293b5b4a2cfe9ac8262840cd);
+            
+        
+
+        marker_466f96f74154b98d9d32a7fddd723ca6.bindPopup(popup_c3c559cff2ce4f5f75ff96f6a475dd7b)
+        ;
+
+        
+    
+    
+            marker_466f96f74154b98d9d32a7fddd723ca6.bindTooltip(
+                `<div>
+                     E 27 St & 1 Ave
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_918a96f30f2352a858bf1362e2cf14e7 = L.marker(
+                [40.77748046, -73.98288594],
+                {
+}
+            ).addTo(marker_cluster_7956001d444458fcd58a725d04aacc50);
+        
+    
+        var popup_495a41a4e0facfc6a69f2c940179b73a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ef21196310ff6a846ef8859b3c515ecd = $(`<div id="html_ef21196310ff6a846ef8859b3c515ecd" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> W 70 St & Amsterdam Ave<br>         <b>Food Cart Score:</b> 0.394<br>         <b>Total Trips:</b> 4950<br>         <b>Lunch Trips:</b> 1092<br>         <b>Weekday Trips:</b> 3331<br>         <b>Casual Trips:</b> 428         </div>`)[0];
+                popup_495a41a4e0facfc6a69f2c940179b73a.setContent(html_ef21196310ff6a846ef8859b3c515ecd);
+            
+        
+
+        marker_918a96f30f2352a858bf1362e2cf14e7.bindPopup(popup_495a41a4e0facfc6a69f2c940179b73a)
+        ;
+
+        
+    
+    
+            marker_918a96f30f2352a858bf1362e2cf14e7.bindTooltip(
+                `<div>
+                     W 70 St & Amsterdam Ave
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_70ae84427917f140804a46aee0d58660 = L.marker(
+                [40.74025878, -73.98409214],
+                {
+}
+            ).addTo(marker_cluster_7956001d444458fcd58a725d04aacc50);
+        
+    
+        var popup_9e8f8803058bc449c861d4b7678b3820 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6c03d71168e2381940960c4a03761dfc = $(`<div id="html_6c03d71168e2381940960c4a03761dfc" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> Lexington Ave & E 24 St<br>         <b>Food Cart Score:</b> 0.393<br>         <b>Total Trips:</b> 4474<br>         <b>Lunch Trips:</b> 1060<br>         <b>Weekday Trips:</b> 3684<br>         <b>Casual Trips:</b> 479         </div>`)[0];
+                popup_9e8f8803058bc449c861d4b7678b3820.setContent(html_6c03d71168e2381940960c4a03761dfc);
+            
+        
+
+        marker_70ae84427917f140804a46aee0d58660.bindPopup(popup_9e8f8803058bc449c861d4b7678b3820)
+        ;
+
+        
+    
+    
+            marker_70ae84427917f140804a46aee0d58660.bindTooltip(
+                `<div>
+                     Lexington Ave & E 24 St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_1b912008f6cbbf419ff495f67049a165 = L.marker(
+                [40.75660359, -73.9979009],
+                {
+}
+            ).addTo(marker_cluster_7956001d444458fcd58a725d04aacc50);
+        
+    
+        var popup_be1ad6b8d871be359852f8fdeb431b8c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_709eb71c09aac9dd99b3f239511b0633 = $(`<div id="html_709eb71c09aac9dd99b3f239511b0633" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> W 37 St & 10 Ave<br>         <b>Food Cart Score:</b> 0.391<br>         <b>Total Trips:</b> 5250<br>         <b>Lunch Trips:</b> 948<br>         <b>Weekday Trips:</b> 3972<br>         <b>Casual Trips:</b> 469         </div>`)[0];
+                popup_be1ad6b8d871be359852f8fdeb431b8c.setContent(html_709eb71c09aac9dd99b3f239511b0633);
+            
+        
+
+        marker_1b912008f6cbbf419ff495f67049a165.bindPopup(popup_be1ad6b8d871be359852f8fdeb431b8c)
+        ;
+
+        
+    
+    
+            marker_1b912008f6cbbf419ff495f67049a165.bindTooltip(
+                `<div>
+                     W 37 St & 10 Ave
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_d97d3af496d99f41c608f8dde56c5b67 = L.marker(
+                [40.73153937464073, -73.9853024482727],
+                {
+}
+            ).addTo(marker_cluster_7956001d444458fcd58a725d04aacc50);
+        
+    
+        var popup_0a8f91c8bcd07924e10869ac0a0d13fc = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6ce8352278bef01464d59ba97352e85a = $(`<div id="html_6ce8352278bef01464d59ba97352e85a" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> E 13 St & 2 Ave<br>         <b>Food Cart Score:</b> 0.391<br>         <b>Total Trips:</b> 5111<br>         <b>Lunch Trips:</b> 1002<br>         <b>Weekday Trips:</b> 3342<br>         <b>Casual Trips:</b> 708         </div>`)[0];
+                popup_0a8f91c8bcd07924e10869ac0a0d13fc.setContent(html_6ce8352278bef01464d59ba97352e85a);
+            
+        
+
+        marker_d97d3af496d99f41c608f8dde56c5b67.bindPopup(popup_0a8f91c8bcd07924e10869ac0a0d13fc)
+        ;
+
+        
+    
+    
+            marker_d97d3af496d99f41c608f8dde56c5b67.bindTooltip(
+                `<div>
+                     E 13 St & 2 Ave
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            marker_cluster_7956001d444458fcd58a725d04aacc50.addTo(map_6d8529e354783cf4c76a77110e147ad7);
+        
+</script>
+</html>

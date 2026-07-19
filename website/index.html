@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NYC Food Cart Location Analysis</title>
+
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Leaflet Map CSS -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  />
+</head>
+
+<body>
+  <div class="app-container">
+    <aside class="sidebar">
+      <header class="sidebar-header">
+        <h1>Food Cart Location Analysis</h1>
+        <p class="intro">
+          Ranks bike-share station areas as potential food-cart locations, scored on
+          trip volume, lunch-hour demand, weekday traffic, and casual rider activity.
+        </p>
+      </header>
+
+      <section class="data-source" aria-labelledby="dataSourceLabel">
+        <div class="data-source-row">
+          <div class="data-source-text">
+            <span id="dataSourceLabel" class="section-label">Dataset</span>
+            <span id="datasetName" class="dataset-name">NYC Citi Bike · March 2026</span>
+            <span id="datasetMeta" class="dataset-meta"></span>
+          </div>
+          <button type="button" id="resetDataBtn" class="ghost-btn" hidden>Reset to demo</button>
+        </div>
+
+        <label for="csvUpload" class="upload-btn">
+          Analyze your own trip data
+          <input type="file" id="csvUpload" accept=".csv,text/csv" multiple />
+        </label>
+        <p class="upload-hint">
+          Upload one or more bike-share trip CSVs (Citi Bike format). Files are processed
+          in your browser &mdash; nothing is sent anywhere.
+        </p>
+
+        <div id="uploadProgress" class="upload-progress" hidden>
+          <div class="progress-track"><div id="progressFill" class="progress-fill"></div></div>
+          <span id="progressText" class="progress-text">Reading file&hellip;</span>
+        </div>
+
+        <p id="uploadError" class="message message-error" role="alert" hidden></p>
+      </section>
+
+      <section class="controls" aria-label="Filters">
+        <div class="control-box">
+          <label for="viewMode">View mode</label>
+          <select id="viewMode">
+            <option value="top">Top locations</option>
+            <option value="bottom">Least active locations</option>
+            <option value="all">All locations</option>
+          </select>
+        </div>
+
+        <div class="control-box">
+          <label for="topN">Number of locations</label>
+          <select id="topN">
+            <option value="10">10</option>
+            <option value="25">25</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+          </select>
+        </div>
+
+        <div class="control-box">
+          <label for="minLunchTrips">
+            Minimum lunch-hour trips
+            <output id="minLunchTripsValue" for="minLunchTrips">0</output>
+          </label>
+          <input type="range" id="minLunchTrips" min="0" max="5000" value="0" step="100" />
+        </div>
+      </section>
+
+      <section class="legend" aria-label="Score legend">
+        <span class="section-label">Score bands</span>
+        <p class="legend-row"><span class="dot high" aria-hidden="true"></span> <strong>High</strong> <span class="legend-range">score &ge; 0.66</span></p>
+        <p class="legend-row"><span class="dot medium" aria-hidden="true"></span> <strong>Medium</strong> <span class="legend-range">0.33 &ndash; 0.66</span></p>
+        <p class="legend-row"><span class="dot low" aria-hidden="true"></span> <strong>Low</strong> <span class="legend-range">score &lt; 0.33</span></p>
+        <p class="legend-note">Markers are numbered by rank, so score is never conveyed by color alone.</p>
+      </section>
+
+      <details class="methodology">
+        <summary>How the score works</summary>
+        <p>Each station's activity is normalized against the busiest station, then combined:</p>
+        <ul>
+          <li><strong>35%</strong> lunch-hour trips (11am&ndash;2pm)</li>
+          <li><strong>25%</strong> total trips</li>
+          <li><strong>20%</strong> weekday trips</li>
+          <li><strong>10%</strong> lunch-hour share of all trips</li>
+          <li><strong>10%</strong> casual (non-member) trips</li>
+        </ul>
+      </details>
+
+      <section class="results" aria-label="Ranked locations">
+        <h2 id="resultsHeading">Locations</h2>
+        <div id="locationList" aria-live="polite"></div>
+      </section>
+    </aside>
+
+    <main class="map-container">
+      <div id="map"></div>
+      <div id="mapStatus" class="map-status" role="status" hidden></div>
+    </main>
+  </div>
+
+  <!-- Leaflet Map JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <!-- CSV parsing (runs entirely in the browser) -->
+  <script src="https://unpkg.com/papaparse@5.4.1/papaparse.min.js"></script>
+
+  <!-- Your custom JS -->
+  <script src="scripts.js"></script>
+</body>
+</html>

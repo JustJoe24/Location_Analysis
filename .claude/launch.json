@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "website",
+      "runtimeExecutable": "C:\\Users\\joeyu\\miniconda3\\python.exe",
+      "runtimeArgs": ["-m", "http.server", "5500", "-d", "website"],
+      "port": 5500
+    }
+  ]
+}

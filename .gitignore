@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+.ipynb_checkpoints/
+.env
+.DS_Store
+*.pyc
+data/raw/
+# Regenerable and far over GitHub's 100 MB file limit
+data/processed/citibike_march_2026_cleaned.csv
