@@ -2,10 +2,31 @@
 let map;
 let markersLayer;
 let allLocations = [];
+let lastRendered = [];
 let markersById = new Map();
-let activeCardId = null;
+let pendingHashState = null;
 
 const numberFmt = new Intl.NumberFormat("en-US");
+
+function plural(n, word) {
+  return `${numberFmt.format(n)} ${word}${n === 1 ? "" : "s"}`;
+}
+
+const MODE_LABELS = {
+  top: "Top locations",
+  bottom: "Least active",
+  all: "All locations",
+};
+
+const MODE_HINTS = {
+  top: "",
+  bottom: "Ranked from least active — #1 is the quietest station. The mirror view, useful for sanity-checking the score.",
+  all: "Every station that passes the lunch-hour filter, busiest first.",
+};
+
+function prefersReducedMotion() {
+  return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+}
 
 /* ===== Map setup ===== */
 function initializeMap() {
@@ -26,7 +47,7 @@ function getScoreBand(score) {
 }
 
 const BAND_COLORS = {
-  high: "#16a34a",
+  high: "#15803d",
   medium: "#f59e0b",
   low: "#dc2626",
 };
@@ -54,13 +75,26 @@ function createRankMarker(location, rank) {
   marker.bindPopup(`
     <div class="popup-title">${rank}. ${escapeHtml(location.start_station_name)}</div>
     <dl class="popup-stats">
-      <dt>Score</dt><dd>${score.toFixed(3)}</dd>
+      <dt>Score (0–1)</dt><dd>${score.toFixed(3)}</dd>
       <dt>Total trips</dt><dd>${numberFmt.format(location.total_trips)}</dd>
       <dt>Lunch-hour trips</dt><dd>${numberFmt.format(location.lunch_hour_trips)}</dd>
       <dt>Weekday trips</dt><dd>${numberFmt.format(location.weekday_trips)}</dd>
-      <dt>Casual trips</dt><dd>${numberFmt.format(location.casual_trips)}</dd>
+      <dt>Casual (non-member) trips</dt><dd>${numberFmt.format(location.casual_trips)}</dd>
     </dl>
   `);
+
+  // Screen readers get the key stats on the marker itself, since focus
+  // stays on the marker when its popup opens
+  marker.once("add", () => {
+    const el = marker.getElement();
+    if (el) {
+      el.setAttribute(
+        "aria-label",
+        `Rank ${rank}: ${location.start_station_name}, score ${score.toFixed(3)} out of 1, ` +
+          `${numberFmt.format(location.total_trips)} total trips`
+      );
+    }
+  });
 
   marker.on("click", () => setActiveCard(locationId(location), false));
 
@@ -74,16 +108,23 @@ function escapeHtml(text) {
 }
 
 /* ===== Sidebar list ===== */
-function updateLocationList(locations) {
+function updateLocationList(locations, viewMode) {
   const list = document.getElementById("locationList");
   const heading = document.getElementById("resultsHeading");
+  const status = document.getElementById("resultsStatus");
   list.innerHTML = "";
-  activeCardId = null;
 
+  const modeLabel = MODE_LABELS[viewMode] || "Locations";
   heading.textContent =
     locations.length === 0
-      ? "Locations"
-      : `Locations (${numberFmt.format(locations.length)} shown)`;
+      ? modeLabel
+      : `${modeLabel} (${numberFmt.format(locations.length)} shown)`;
+  status.textContent =
+    locations.length === 1
+      ? "1 location shown"
+      : `${numberFmt.format(locations.length)} locations shown`;
+
+  document.getElementById("exportBtn").hidden = locations.length === 0;
 
   if (locations.length === 0) {
     const empty = document.createElement("div");
@@ -104,6 +145,7 @@ function updateLocationList(locations) {
     card.type = "button";
     card.className = "location-card";
     card.dataset.id = locationId(location);
+    card.setAttribute("aria-pressed", "false");
 
     card.innerHTML = `
       <span class="rank-badge ${band}" style="background:${BAND_COLORS[band]}">${rank}</span>
@@ -118,7 +160,12 @@ function updateLocationList(locations) {
     card.addEventListener("click", () => {
       const marker = markersById.get(locationId(location));
       if (marker) {
-        map.flyTo(marker.getLatLng(), Math.max(map.getZoom(), 14), { duration: 0.6 });
+        const targetZoom = Math.max(map.getZoom(), 14);
+        if (prefersReducedMotion()) {
+          map.setView(marker.getLatLng(), targetZoom, { animate: false });
+        } else {
+          map.flyTo(marker.getLatLng(), targetZoom, { duration: 0.6 });
+        }
         marker.openPopup();
       }
       setActiveCard(locationId(location), true);
@@ -129,24 +176,37 @@ function updateLocationList(locations) {
 }
 
 function setActiveCard(id, scrolledFromList) {
-  activeCardId = id;
   document.querySelectorAll(".location-card").forEach((card) => {
     const isActive = card.dataset.id === id;
-    card.classList.toggle("active", isActive);
+    card.setAttribute("aria-pressed", String(isActive));
     if (isActive && !scrolledFromList) {
-      card.scrollIntoView({ block: "nearest", behavior: "smooth" });
+      card.scrollIntoView({
+        block: "nearest",
+        behavior: prefersReducedMotion() ? "auto" : "smooth",
+      });
     }
   });
 }
 
 /* ===== Filtering & rendering ===== */
-function filterAndRenderLocations() {
-  const viewMode = document.getElementById("viewMode").value;
-  const topN = Number(document.getElementById("topN").value);
-  const minLunchTrips = Number(document.getElementById("minLunchTrips").value);
+function getFilterState() {
+  return {
+    viewMode: document.getElementById("viewMode").value,
+    topN: Number(document.getElementById("topN").value),
+    minLunchTrips: Number(document.getElementById("minLunchTripsInput").value) || 0,
+  };
+}
 
-  document.getElementById("minLunchTripsValue").textContent =
-    numberFmt.format(minLunchTrips);
+function filterAndRenderLocations() {
+  const { viewMode, topN, minLunchTrips } = getFilterState();
+
+  // "All locations" means all of them: the count cap only applies to the
+  // ranked top/bottom views
+  document.getElementById("topN").disabled = viewMode === "all";
+
+  const hint = document.getElementById("modeHint");
+  hint.textContent = MODE_HINTS[viewMode] || "";
+  hint.hidden = !MODE_HINTS[viewMode];
 
   let filtered = allLocations.filter(
     (location) => Number(location.lunch_hour_trips) >= minLunchTrips
@@ -157,7 +217,9 @@ function filterAndRenderLocations() {
   } else {
     filtered.sort((a, b) => Number(b.food_cart_score) - Number(a.food_cart_score));
   }
-  filtered = filtered.slice(0, topN);
+  if (viewMode !== "all") {
+    filtered = filtered.slice(0, topN);
+  }
 
   markersLayer.clearLayers();
   markersById = new Map();
@@ -168,7 +230,50 @@ function filterAndRenderLocations() {
     marker.addTo(markersLayer);
   });
 
-  updateLocationList(filtered);
+  lastRendered = filtered;
+  updateLocationList(filtered, viewMode);
+  writeStateToHash();
+}
+
+/* ===== Shareable URL state ===== */
+function writeStateToHash() {
+  const { viewMode, topN, minLunchTrips } = getFilterState();
+  const params = new URLSearchParams({
+    view: viewMode,
+    n: String(topN),
+    lunch: String(minLunchTrips),
+  });
+  history.replaceState(null, "", `#${params}`);
+}
+
+function readStateFromHash() {
+  if (!location.hash || location.hash.length < 2) return null;
+  const params = new URLSearchParams(location.hash.slice(1));
+  const state = {};
+  const view = params.get("view");
+  if (["top", "bottom", "all"].includes(view)) state.viewMode = view;
+  const n = params.get("n");
+  if (["10", "25", "50", "100"].includes(n)) state.topN = n;
+  const lunch = Number(params.get("lunch"));
+  if (Number.isFinite(lunch) && lunch >= 0) state.minLunchTrips = Math.round(lunch);
+  return Object.keys(state).length > 0 ? state : null;
+}
+
+function applyFilterState(state) {
+  if (state.viewMode) document.getElementById("viewMode").value = state.viewMode;
+  if (state.topN) document.getElementById("topN").value = state.topN;
+  if (state.minLunchTrips !== undefined) {
+    setThreshold(state.minLunchTrips);
+  }
+}
+
+/* ===== Threshold controls (slider + exact number, kept in sync) ===== */
+function setThreshold(value) {
+  const slider = document.getElementById("minLunchTrips");
+  const input = document.getElementById("minLunchTripsInput");
+  const clamped = Math.max(0, Math.min(Number(value) || 0, Number(input.max)));
+  input.value = clamped;
+  slider.value = clamped;
 }
 
 /* ===== Dataset switching ===== */
@@ -187,15 +292,24 @@ function setDataset(locations, name, tripsTotal) {
   if (tripsTotal) meta.push(`${numberFmt.format(tripsTotal)} trips`);
   document.getElementById("datasetMeta").textContent = meta.join(" · ");
 
-  // Fit the lunch-trip slider to this dataset's range
+  // Fit the lunch-trip threshold to this dataset's range
   const slider = document.getElementById("minLunchTrips");
+  const input = document.getElementById("minLunchTripsInput");
   const maxLunch = allLocations.reduce(
     (max, l) => Math.max(max, Number(l.lunch_hour_trips) || 0),
     0
   );
-  slider.max = Math.max(100, Math.ceil(maxLunch / 100) * 100);
-  slider.step = Math.max(10, Math.round(slider.max / 50 / 10) * 10);
-  slider.value = 0;
+  const fittedMax = Math.max(100, Math.ceil(maxLunch / 100) * 100);
+  slider.max = fittedMax;
+  input.max = fittedMax;
+  slider.step = Math.max(10, Math.round(fittedMax / 50 / 10) * 10);
+  setThreshold(0);
+
+  // A link with filters in it restores them on first load
+  if (pendingHashState) {
+    applyFilterState(pendingHashState);
+    pendingHashState = null;
+  }
 
   filterAndRenderLocations();
 
@@ -208,7 +322,7 @@ function setDataset(locations, name, tripsTotal) {
         [Math.min(...lats), Math.min(...lngs)],
         [Math.max(...lats), Math.max(...lngs)],
       ],
-      { padding: [40, 40], maxZoom: 13 }
+      { padding: [40, 40], maxZoom: 13, animate: !prefersReducedMotion() }
     );
   }
 }
@@ -241,6 +355,48 @@ async function loadDefaultData() {
     console.error("Demo data failed to load:", err);
   }
   document.getElementById("resetDataBtn").hidden = true;
+}
+
+/* ===== CSV export of the current view ===== */
+function csvCell(value) {
+  const s = String(value == null ? "" : value);
+  return /[",\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s;
+}
+
+function exportCurrentView() {
+  if (lastRendered.length === 0) return;
+
+  const columns = [
+    ["rank", (l, i) => i + 1],
+    ["station_name", (l) => l.start_station_name],
+    ["station_id", (l) => l.start_station_id],
+    ["latitude", (l) => l.start_lat],
+    ["longitude", (l) => l.start_lng],
+    ["food_cart_score", (l) => Number(l.food_cart_score).toFixed(4)],
+    ["total_trips", (l) => l.total_trips],
+    ["lunch_hour_trips", (l) => l.lunch_hour_trips],
+    ["weekday_trips", (l) => l.weekday_trips],
+    ["weekend_trips", (l) => l.weekend_trips],
+    ["casual_trips", (l) => l.casual_trips],
+    ["member_trips", (l) => l.member_trips],
+  ];
+
+  const header = columns.map(([name]) => name).join(",");
+  const rows = lastRendered.map((l, i) =>
+    columns.map(([, get]) => csvCell(get(l, i))).join(",")
+  );
+  const blob = new Blob([header + "\n" + rows.join("\n")], {
+    type: "text/csv;charset=utf-8",
+  });
+
+  const { viewMode } = getFilterState();
+  const link = document.createElement("a");
+  link.href = URL.createObjectURL(blob);
+  link.download = `food-cart-locations-${viewMode}.csv`;
+  document.body.appendChild(link);
+  link.click();
+  link.remove();
+  URL.revokeObjectURL(link.href);
 }
 
 /* ===== Client-side analysis pipeline =====
@@ -443,12 +599,17 @@ async function handleUpload(fileList) {
       files.length === 1 ? files[0].name : `${files.length} uploaded files`;
     setDataset(scored, label, counters.rowsKept);
     document.getElementById("resetDataBtn").hidden = false;
+
+    const excluded = counters.rowsRead - counters.rowsKept;
     setProgress(
       1,
-      `Done — ${numberFmt.format(counters.rowsKept)} trips across ` +
-        `${numberFmt.format(scored.length)} stations`
+      `Done — ${plural(counters.rowsKept, "trip")} across ` +
+        plural(scored.length, "station") +
+        (excluded > 0
+          ? ` · ${plural(excluded, "row")} excluded (incomplete or out-of-range)`
+          : "")
     );
-    setTimeout(hideProgress, 4000);
+    setTimeout(hideProgress, 6000);
   } catch (err) {
     hideProgress();
     setUploadError(err.message);
@@ -458,11 +619,24 @@ async function handleUpload(fileList) {
 /* ===== Wire-up ===== */
 document.addEventListener("DOMContentLoaded", () => {
   initializeMap();
+  pendingHashState = readStateFromHash();
   loadDefaultData();
 
   document.getElementById("viewMode").addEventListener("change", filterAndRenderLocations);
   document.getElementById("topN").addEventListener("change", filterAndRenderLocations);
-  document.getElementById("minLunchTrips").addEventListener("input", filterAndRenderLocations);
+
+  const slider = document.getElementById("minLunchTrips");
+  const thresholdInput = document.getElementById("minLunchTripsInput");
+  slider.addEventListener("input", () => {
+    thresholdInput.value = slider.value;
+    filterAndRenderLocations();
+  });
+  thresholdInput.addEventListener("input", () => {
+    slider.value = thresholdInput.value;
+    filterAndRenderLocations();
+  });
+
+  document.getElementById("exportBtn").addEventListener("click", exportCurrentView);
 
   document.getElementById("csvUpload").addEventListener("change", (event) => {
     handleUpload(event.target.files);

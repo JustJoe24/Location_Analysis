@@ -3,18 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NYC Food Cart Location Analysis</title>
+  <title>Food Cart Location Analysis</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📍</text></svg>" />
 
-  <link rel="stylesheet" href="style.css" />
-
-  <!-- Leaflet Map CSS -->
+  <!-- Leaflet Map CSS (before ours, so our overrides win the cascade) -->
   <link
     rel="stylesheet"
     href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
   />
+
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
+  <a class="skip-link" href="#map">Skip to map</a>
   <div class="app-container">
     <aside class="sidebar">
       <header class="sidebar-header">
@@ -60,6 +62,7 @@
             <option value="bottom">Least active locations</option>
             <option value="all">All locations</option>
           </select>
+          <p id="modeHint" class="mode-hint" hidden></p>
         </div>
 
         <div class="control-box">
@@ -73,27 +76,29 @@
         </div>
 
         <div class="control-box">
-          <label for="minLunchTrips">
-            Minimum lunch-hour trips
-            <output id="minLunchTripsValue" for="minLunchTrips">0</output>
-          </label>
-          <input type="range" id="minLunchTrips" min="0" max="5000" value="0" step="100" />
+          <label for="minLunchTrips">Minimum lunch-hour trips</label>
+          <div class="threshold-row">
+            <input type="range" id="minLunchTrips" min="0" max="5000" value="0" step="100" />
+            <input type="number" id="minLunchTripsInput" min="0" max="5000" value="0"
+                   aria-label="Minimum lunch-hour trips (exact value)" />
+          </div>
         </div>
       </section>
 
       <section class="legend" aria-label="Score legend">
-        <span class="section-label">Score bands</span>
-        <p class="legend-row"><span class="dot high" aria-hidden="true"></span> <strong>High</strong> <span class="legend-range">score &ge; 0.66</span></p>
-        <p class="legend-row"><span class="dot medium" aria-hidden="true"></span> <strong>Medium</strong> <span class="legend-range">0.33 &ndash; 0.66</span></p>
-        <p class="legend-row"><span class="dot low" aria-hidden="true"></span> <strong>Low</strong> <span class="legend-range">score &lt; 0.33</span></p>
+        <span class="section-label">Score bands <span class="legend-scale">(scores run 0&ndash;1)</span></span>
+        <p class="legend-row"><span class="dot high" aria-hidden="true"></span> <strong>High</strong> <span class="legend-range">0.66 and up</span></p>
+        <p class="legend-row"><span class="dot medium" aria-hidden="true"></span> <strong>Medium</strong> <span class="legend-range">0.33 up to 0.66</span></p>
+        <p class="legend-row"><span class="dot low" aria-hidden="true"></span> <strong>Low</strong> <span class="legend-range">below 0.33</span></p>
         <p class="legend-note">Markers are numbered by rank, so score is never conveyed by color alone.</p>
       </section>
 
       <details class="methodology">
         <summary>How the score works</summary>
-        <p>Each station's activity is normalized against the busiest station, then combined:</p>
+        <p>Every station gets a score from 0 (weakest) to 1 (strongest). Each activity
+        signal is normalized against the busiest station, then combined:</p>
         <ul>
-          <li><strong>35%</strong> lunch-hour trips (11am&ndash;2pm)</li>
+          <li><strong>35%</strong> lunch-hour trips (11&thinsp;am&ndash;3&thinsp;pm)</li>
           <li><strong>25%</strong> total trips</li>
           <li><strong>20%</strong> weekday trips</li>
           <li><strong>10%</strong> lunch-hour share of all trips</li>
@@ -102,13 +107,17 @@
       </details>
 
       <section class="results" aria-label="Ranked locations">
-        <h2 id="resultsHeading">Locations</h2>
-        <div id="locationList" aria-live="polite"></div>
+        <div class="results-header">
+          <h2 id="resultsHeading">Locations</h2>
+          <button type="button" id="exportBtn" class="ghost-btn" hidden>Download CSV</button>
+        </div>
+        <p id="resultsStatus" class="sr-only" role="status"></p>
+        <div id="locationList"></div>
       </section>
     </aside>
 
     <main class="map-container">
-      <div id="map"></div>
+      <div id="map" tabindex="-1"></div>
       <div id="mapStatus" class="map-status" role="status" hidden></div>
     </main>
   </div>

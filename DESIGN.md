@@ -8,7 +8,7 @@ colors:
   paper: "#ffffff"
   mist-panel: "#f9fafb"
   hairline: "#e5e7eb"
-  score-high: "#16a34a"
+  score-high: "#15803d"
   score-medium: "#f59e0b"
   score-low: "#dc2626"
   muted: "#6b7280"
@@ -69,7 +69,7 @@ The system explicitly rejects the generic Bootstrap dashboard: no default-widget
 A cool, neutral chrome that cedes all saturation to the data layer.
 
 ### Primary
-- **Score High — Signal Green** (#16a34a): marks the strongest food-cart locations on the map and legend. The most meaningful color on screen; it appears only as data.
+- **Score High — Signal Green** (#15803d): marks the strongest food-cart locations on the map and legend. The most meaningful color on screen; it appears only as data. Deep enough that white 11px rank numerals pass WCAG AA (5.0:1).
 
 ### Secondary
 - **Score Medium — Amber** (#f59e0b): mid-scoring locations.
@@ -96,7 +96,7 @@ A cool, neutral chrome that cedes all saturation to the data layer.
 **Character:** A single utilitarian sans used at restrained sizes; hierarchy comes from weight and scale, not typeface changes. Precise and unglamorous, like a well-set report.
 
 ### Hierarchy
-- **Headline** (700, 24px): the dashboard title, once per page.
+- **Headline** (700, 20px): the dashboard title, once per page.
 - **Title** (700, 15px): location-card headings and section labels.
 - **Body** (400, 14px, 1.5 line-height): descriptions and explanatory copy.
 - **Label** (700, 13-14px): control labels and card stats; bold labels with regular values.
@@ -136,7 +136,7 @@ Refined and restrained: minimal styling, tight spacing, function-first.
 
 ### Do:
 - **Do** keep the map dominant — the sidebar stays at 380px and never grows extra panels.
-- **Do** reserve #16a34a / #f59e0b / #dc2626 for data encoding only.
+- **Do** reserve #15803d / #f59e0b / #dc2626 for data encoding only.
 - **Do** separate surfaces with 1px #e5e7eb hairlines and background tints (#f4f6f8 → #ffffff → #f9fafb).
 - **Do** format scores to three decimals and keep stat labels bold, values regular.
 - **Do** pair score color with rank, label, or shape (The Two-Channel Rule).
